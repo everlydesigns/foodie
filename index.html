@@ -20,29 +20,37 @@
 <body>
 	<!-- Header -->
 	<header class="header">
-		<div class="header__logo-wrap">
-			<img src="dist/img/logo.svg" alt="Site logo" class="header__logo">
+		<div class="row">
+			<div class="header__logo-nav-wrap">
+				<div class="header__logo-background">
+					<img src="dist/img/logo.svg" alt="Site logo" class="header__logo">
+				</div>
+
+				<ul class="header__nav-links">
+					<li><a href="#" class="header__nav-link">Recipes</a></li>
+					<li><a href="#" class="header__nav-link">About</a></li>
+					<li><a href="#" class="header__nav-link">Contact</a></li>
+				</ul>
+
+				<button class="header__menu-toggle">
+					<span class="header__menu-toggle__open-text">Menu</span>
+					<span class="header__menu-toggle__close-text">Close</span>
+				</button>
+			</div>
+
+			<form class="search-bar" action="#" method="post">
+				<input type="text" class="search-bar__input" placeholder="Search for recipes">
+			</form>
+
+			<div class="profile-widget">
+				<div class="profile-widget__avatar-badge-wrap">
+					<div class="profile-widget__badge">2</div>
+					<div class="profile-widget__avatar-wrap">
+						<img src="dist/img/user-1.jpg" alt="Your set profile picture" class="profile-widget__avatar">
+					</div>
+				</div>
+				<span class="profile-widget__user-name">Freya</span>
 		</div>
-
-		<ul class="header__nav-links">
-			<li><a href="#" class="header__nav-link">Recipes</a></li>
-			<li><a href="#" class="header__nav-link">About</a></li>
-			<li><a href="#" class="header__nav-link">Contact</a></li>
-		</ul>
-
-		<button class="header__menu-toggle">
-			<span class="header__menu-open-text">Menu</span>
-			<span class="header__menu-close-text">Close</span>
-		</button>
-
-		<form class="search-bar" action="#" method="post">
-			<input type="text" class="search-bar__input" placeholder="Search for recipes">
-		</form>
-
-		<div class="profile-widget">
-			<div class="profile-widget__badge">2</div>
-			<img src="dist/img/user-1-avatar.jpg" alt="Your profile picture" class="profile-widget__profile-pic">
-			<span class="profile-widget__user-name">Freya</span>
 		</div>
 	</header>
 

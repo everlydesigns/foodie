@@ -4,21 +4,47 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Title</title>
+	<title>foodie! - Heavenly Recipes</title>
 	<!-- <meta name="description" content="DESCRIPTION"> -->
 	<!-- <link rel="icon" href="dist/img/favicon.png" type="image/png"> -->
 	<link rel="stylesheet" href="dist/css/style.css">
 
 	<!-- Social Media -->
-	<!--<meta property="og:title" content="Title">
-	<meta property="og:url" content="https://example.com">
-	<meta property="og:image" content="https://example.com/image.jpg">
+	<meta property="og:title" content="foodie! - Heavenly Recipes">
+	<meta property="og:url" content="https://foodie.example.com">
+	<meta property="og:image" content="https://foodie.example.com/cover.jpg">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@twitterHandle">
-	<meta name="twitter:image" content="https://example.com/image.jpg">-->
+	<meta name="twitter:site" content="@foodieExample">
+	<meta name="twitter:image" content="https://foodie.example.com/cover-2.jpg">
 </head>
 <body>
-	<h1>Hello!</h1>
+	<!-- Header -->
+	<header class="header">
+		<div class="header__logo-wrap">
+			<img src="dist/img/logo.svg" alt="Site logo" class="header__logo">
+		</div>
+
+		<ul class="header__nav-links">
+			<li><a href="#" class="header__nav-link">Recipes</a></li>
+			<li><a href="#" class="header__nav-link">About</a></li>
+			<li><a href="#" class="header__nav-link">Contact</a></li>
+		</ul>
+
+		<button class="header__menu-toggle">
+			<span class="header__menu-open-text">Menu</span>
+			<span class="header__menu-close-text">Close</span>
+		</button>
+
+		<form class="search-bar" action="#" method="post">
+			<input type="text" class="search-bar__input" placeholder="Search for recipes">
+		</form>
+
+		<div class="profile-widget">
+			<div class="profile-widget__badge">2</div>
+			<img src="dist/img/user-1-avatar.jpg" alt="Your profile picture" class="profile-widget__profile-pic">
+			<span class="profile-widget__user-name">Freya</span>
+		</div>
+	</header>
 
 	<!-- Scripts -->
 	<script src="dist/js/script.js" charset="utf-8"></script>

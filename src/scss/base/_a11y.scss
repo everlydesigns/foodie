@@ -30,3 +30,11 @@
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
+
+
+:focus {
+	outline-width: .2rem;
+	outline-offset: .2rem;
+	outline-color: var(--outline-color);
+	outline-style: solid;
+}

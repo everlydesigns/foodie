@@ -1,1 +1,1 @@
-"use strict";
+"use strict";document.querySelector(".main-feed").addEventListener("click",(function(t){t.target.classList.contains("post-excerpt__bookmark-btn")&&t.target.classList.toggle("checked"),t.target.classList.contains("post-excerpt__like-btn")&&t.target.classList.toggle("checked")}));

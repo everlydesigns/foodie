@@ -1,0 +1,211 @@
+/*==========================================================================*/
+/* Post Excerpt
+/*==========================================================================*/
+.post-excerpt {
+	border-radius: 1.2rem;
+	box-shadow:
+		0 0 0 .1rem var(--clr-shade-300),
+		inset 0 -.6rem 1rem rgba(var(--clr-shade-200-rgb), 0.06),
+		0 .5rem 1.2rem rgba(var(--clr-primary-800-rgb), 0.08);
+	margin-bottom: 1.8rem;
+
+	/* Thumbnail
+	/*--------------------------------------------------------------------------*/
+	&__thumb {
+		width: 100%;
+
+		&-img {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	/* Label
+	/*--------------------------------------------------------------------------*/
+	&__label {
+		display: inline-block;
+		font-size: 1.2rem;
+		line-height: 2.4rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: 0 .8rem;
+		color: var(--clr-primary-600);
+		background: var(--clr-primary-200);
+		border-radius: .6rem;
+	}
+
+	/* Post title
+	/*--------------------------------------------------------------------------*/
+	&__headline {
+		font-size: 2rem;
+		line-height: 2.6rem;
+		color: var(--clr-secondary-400);
+	}
+
+	/* Post excerpt
+	/*--------------------------------------------------------------------------*/
+	&__excerpt-body {
+		position: relative;
+	}
+
+	&__excerpt {
+		font-size: 1.4rem;
+		line-height: 2.1rem;
+		color: var(--clr-shade-600);
+		font-weight: 500;
+
+		max-height: 3 * 2.1rem; // number of lines
+		overflow: hidden;
+	}
+
+	/* Read more
+	/*--------------------------------------------------------------------------*/
+	&__read-more-fade {
+		padding: ((2.1rem - 1.8rem) / 2); // make sure that line-heights match
+		padding-left: .8rem;
+		padding-right: .4rem;
+		background: #fff;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		pointer-events: none;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -3rem;
+			width: 3rem;
+			height: 100%;
+			background: linear-gradient(90deg, rgba(#fff, 0) 0%, rgba(#fff, 0.8) 52.6%, #fff 100%);
+		}
+	}
+
+	&__read-more {
+		display: block;
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		text-decoration: none;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: var(--clr-secondary-400);
+		pointer-events: all;
+	}
+
+	&__read-more-guillemet {
+		font-size: 1.4rem;
+		vertical-align: .1rem;
+		line-height: 1.4rem;
+	}
+
+	&__read-more-short {
+		display: none;
+	}
+
+	/* Interaction area
+	/*--------------------------------------------------------------------------*/
+	&__interaction-bar {
+		border-top: .1rem solid var(--clr-shade-100);
+	}
+
+	// interaction items general
+	&__interaction-primary {
+		display: flex;
+		align-items: center;
+
+		> div {
+			display: flex;
+			align-items: center;
+
+			font-size: 1.4rem;
+			line-height: 2rem;
+			color: var(--clr-shade-600);
+			font-weight: 500;
+
+			margin-right: 1.4rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			button {
+				display: block;
+				border: 0;
+				padding: 0;
+				width: 1.6rem;
+				height: 1.6rem;
+				text-indent: 2rem;
+				overflow: hidden;
+				background: none;
+				position: relative;
+				white-space: nowrap;
+
+				.svg-inject {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+				}
+			}
+
+			span {
+				margin-left: .2rem;
+			}
+		}
+	}
+
+	/* Bookmark button
+	/*--------------------------------------------------------------------------*/
+	&__bookmark-btn {
+		path:nth-child(1) {
+			fill: #fff;
+			transition: fill .3s ease;
+		}
+
+		path:nth-child(2) {
+			fill: var(--clr-secondary-400);
+		}
+
+		&.checked {
+			path:nth-child(1) {
+				fill: var(--clr-secondary-400);
+			}
+
+			path:nth-child(2) {
+				fill: var(--clr-secondary-400);
+			}
+		}
+	}
+
+	/* Likes button
+	/*--------------------------------------------------------------------------*/
+	&__like-btn {
+		path {
+			stroke: var(--clr-secondary-400);
+			transition: fill .3s ease;
+		}
+
+		&.checked {
+			path {
+				fill: var(--clr-secondary-400);
+			}
+		}
+	}
+
+	/* Comments button
+	/*--------------------------------------------------------------------------*/
+	&__comments-btn {
+		svg > * {
+			fill: var(--clr-secondary-400);
+		}
+	}
+
+	/* Rating
+	/*--------------------------------------------------------------------------*/
+	&__rating {
+		display: none;
+	}
+}

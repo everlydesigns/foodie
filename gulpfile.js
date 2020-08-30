@@ -10,6 +10,9 @@ const babel = require('gulp-babel')
 const terser = require('gulp-terser')
 const livereload = require('gulp-livereload')
 const image = require('gulp-image')
+const imageResize = require('gulp-image-resize')
+const resize = require('gulp-images-resizer')
+const merge = require('merge-stream')
 
 
 /* SASS + Autoprefixer + Minifier
@@ -39,9 +42,85 @@ function jsBabelMin() {
 /* Optimize graphics
 /*--------------------------------------------------------------------------*/
 function imgOptimize() {
-	return src('src/img/*')
+	// Resize and optimize post media
+	let optimizePosts1 = src('src/img/posts/*')
+		.pipe(resize({
+			width: 1520 // max width 1520px
+		}))
+		.pipe(image())
+		.pipe(rename({suffix: '-1520' }))
+		.pipe(dest('./dist/img/posts'))
+
+	// max width 380px + retina
+	let optimizePosts2 = src('src/img/posts/*')
+		.pipe(resize({
+			width: (380 * 2)
+		}))
+		.pipe(image())
+		.pipe(rename({suffix: '-380@2x' }))
+		.pipe(dest('./dist/img/posts'))
+		.pipe(resize({
+			width: '50%'
+		}))
+		.pipe(image())
+		.pipe(rename(path => ({
+			dirname: path.dirname,
+			basename: path.basename.replace('@2x', ''),
+			extname: path.extname,
+		})))
+		.pipe(dest('./dist/img/posts'))
+
+	// max width 320px + retina
+	let optimizePosts3 = src('src/img/posts/*')
+		.pipe(resize({
+			width: (320 * 2)
+		}))
+		.pipe(image())
+		.pipe(rename({suffix: '-320@2x' }))
+		.pipe(dest('./dist/img/posts'))
+		.pipe(resize({
+			width: '50%'
+		}))
+		.pipe(image())
+		.pipe(rename(path => ({
+			dirname: path.dirname,
+			basename: path.basename.replace('@2x', ''),
+			extname: path.extname,
+		})))
+		.pipe(dest('./dist/img/posts'))
+
+	// max width 260px + retina
+	let optimizePosts4 = src('src/img/posts/*')
+		.pipe(resize({
+			height: (260 * 2)
+		}))
+		.pipe(image())
+		.pipe(rename({suffix: '-x260@2x' }))
+		.pipe(dest('./dist/img/posts'))
+		.pipe(resize({
+			height: '50%'
+		}))
+		.pipe(image())
+		.pipe(rename(path => ({
+			dirname: path.dirname,
+			basename: path.basename.replace('@2x', ''),
+			extname: path.extname,
+		})))
+		.pipe(dest('./dist/img/posts'))
+
+	// Optimize site graphics
+	let optimizeGraphics = src('src/img/*')
 		.pipe(image())
 		.pipe(dest('./dist/img'))
+
+	// merge all actions
+	return merge(
+		optimizePosts1,
+		optimizePosts2,
+		optimizePosts3,
+		optimizePosts4,
+		optimizeGraphics
+	);
 }
 
 /*==========================================================================*/
@@ -61,7 +140,7 @@ function watchFiles() {
 /*==========================================================================*/
 /* Tasks
 /*==========================================================================*/
-task('default', parallel(sassPrefixMin, jsBabelMin, watchFiles))
+task('default', parallel(sassPrefixMin, jsBabelMin, watchFiles, imgOptimize))
 
 /* SASS Task
 /*--------------------------------------------------------------------------*/

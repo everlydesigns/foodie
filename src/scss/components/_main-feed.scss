@@ -3,4 +3,19 @@
 /*==========================================================================*/
 .main-feed {
 	padding-top: 4rem;
+
+	&__load-more {
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+		padding: 1.5rem 3rem;
+		color: #fff;
+		background: var(--clr-secondary-400);
+		text-transform: uppercase;
+		border-radius: 2.4rem;
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 4.2rem;
+	}
 }

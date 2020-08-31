@@ -2,22 +2,8 @@
 /* Home
 /*==========================================================================*/
 
-/* Make interaction items clickable
-/*--------------------------------------------------------------------------*/
-document.querySelector('.main-feed').addEventListener('click', (e) => {
 
-	// bookmark button
-	if ( e.target.classList.contains('post-excerpt__bookmark-btn') ) {
-		e.target.classList.toggle('checked');
-	}
-
-	// likes button
-	if ( e.target.classList.contains('post-excerpt__like-btn') ) {
-		e.target.classList.toggle('checked');
-	}
-})
-
-/* Duplicate post excerpts (DRY)
+/* Insert post excerpts (DRY)
 /*--------------------------------------------------------------------------*/
 function insertPosts() {
 	const postExcerptBase = document.querySelector('.post-excerpt');
@@ -85,3 +71,44 @@ function insertPosts() {
 
 
 } insertPosts();
+
+
+/* Initialize header and nav functionality
+/*--------------------------------------------------------------------------*/
+function headerNavInit() {
+	// click event for menu toggle
+	document.querySelector('.header__menu-toggle').addEventListener('click', () => {
+		document.querySelector('.header').classList.toggle('header--opened');
+	});
+} headerNavInit();
+
+
+/* Search bar submit
+/*--------------------------------------------------------------------------*/
+function searchBarInit() {
+
+	// handle all search forms
+	let searchForms = document.forms;
+	for (let i = 0; i < searchForms.length; i++) {
+		searchForms[i].addEventListener('submit', e => {
+			e.preventDefault();
+
+			location.reload();
+		})
+	}
+} searchBarInit();
+
+/* Make interaction items clickable
+/*--------------------------------------------------------------------------*/
+document.querySelector('.main-feed').addEventListener('click', (e) => {
+
+	// bookmark button
+	if ( e.target.classList.contains('post-excerpt__bookmark-btn') ) {
+		e.target.classList.toggle('checked');
+	}
+
+	// likes button
+	if ( e.target.classList.contains('post-excerpt__like-btn') ) {
+		e.target.classList.toggle('checked');
+	}
+})

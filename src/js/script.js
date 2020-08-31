@@ -80,6 +80,14 @@ function headerNavInit() {
 	document.querySelector('.header__menu-toggle').addEventListener('click', () => {
 		document.querySelector('.header').classList.toggle('header--opened');
 	});
+
+	// click event for navigation checkboxes
+	document.querySelectorAll('.nav-links__item--checkbox').forEach((checkboxItem) => {
+		checkboxItem.addEventListener('click', function(e) {
+			this.querySelector('.nav-links__item-checkbox').classList.toggle('checked');
+		})
+	});
+
 } headerNavInit();
 
 

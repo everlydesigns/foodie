@@ -1,10 +1,9 @@
 /*==========================================================================*/
-/* Import Fonts (if not loaded externally)
+/* Import Font Awesome
 /*==========================================================================*/
 @font-face {
-	font-family: 'Font Name Here';
+	font-family: 'Font Awesome 5 Brands';
 	font-style: normal;
 	font-weight: 400;
-	font-display: swap;
-	src: local('Font Name Here'), url(https://fonts.example.com/font.woff2) format('woff2');
+	src: local('Font Awesome 5 Brands'), url(../fonts/fa-brands-400.ttf) format('truetype');
 }

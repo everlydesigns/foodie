@@ -1,0 +1,73 @@
+/*==========================================================================*/
+/* Footer
+/*==========================================================================*/
+.footer {
+	background: var(--clr-primary-200);
+	padding: 0 2rem;
+	color: var(--clr-primary-600);
+	font-size: 1.2rem;
+	line-height: 1.8rem;
+	font-weight: 500;
+	padding-top: .6rem;
+
+	/* Logo + Brand Details
+	/*--------------------------------------------------------------------------*/
+	&__logo-wrap {
+		padding: 1.6rem 0;
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		display: block;
+	}
+
+	&__brand-details {
+		flex: 1;
+		text-align: right;
+	}
+
+	/* Footer copyright + social media
+	/*--------------------------------------------------------------------------*/
+	&__misc {
+		display: flex;
+		align-items: center;
+		padding-bottom: 2rem;
+	}
+
+	&__legal {
+		font-size: inherit;
+		flex-basis: 21.6rem;
+
+		a {
+			color: inherit;
+		}
+	}
+
+	&__social-media {
+		font-family: "Font Awesome 5 Brands", sans-serif;
+		font-size: 1.6rem;
+		line-height: 1.8rem;
+		text-align: right;
+		flex: 1;
+		pointer-events: none;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+			margin-left: .5rem;
+			pointer-events: all;
+		}
+	}
+
+	// Font Awesome
+	&__social-facebook:before {
+		content: "\f082";
+	}
+	&__social-twitter:before {
+		content: "\f099";
+	}
+	&__social-instagram:before {
+		content: "\f16d";
+	}
+}

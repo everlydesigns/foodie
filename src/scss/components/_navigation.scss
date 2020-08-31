@@ -16,8 +16,30 @@
 	@at-root .header--opened ~ .nav-panel {
 		display: block;
 	}
+
+	/* Nav footer
+	/*--------------------------------------------------------------------------*/
+	.footer {
+		background: none;
+		position: relative;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 2rem;
+			right: 2rem;
+			height: .2rem;
+			border-radius: .1rem;
+			background: rgba(var(--clr-primary-600-rgb), .4);
+			z-index: 1;
+		}
+	}
 }
 
+/* Nav sections
+/*--------------------------------------------------------------------------*/
 .nav-section {
 	padding-left: 2rem;
 	padding-right: 2rem;

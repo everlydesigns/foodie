@@ -7,6 +7,7 @@
 @import "base/typography";
 @import "base/layout";
 @import "base/base";
+@import "base/fonts";
 @import "base/a11y";
 
 // Components
@@ -14,6 +15,7 @@
 @import "components/main-feed";
 @import "components/post-excerpt";
 @import "components/navigation";
+@import "components/footer";
 
 @import "components/button";
 @import "components/search-bar";

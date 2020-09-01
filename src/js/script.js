@@ -15,8 +15,8 @@ function insertPosts() {
 		{
 			type: "large",
 			title: "Delicious & Healthy Soups That Will Totally Fill You Up Anytime",
-			excerpt: "I know what you’re thinking, “Warm soup in July?” but these recipes are unlinke any others. Consectetur adipiscing elit. Donec quis interdum est. Vivamus vitae sapien mollis, sagittis quam eu, port",
-			thumb: 'dist/img/posts/post-1-380.jpeg',
+			excerpt: "I know what you’re thinking, “Warm soup in July?” but these recipes are unlinke any others. Consectetur adipiscing elit. Donec quis interdum est. Vivamus vitae sapien mollis, sagittis quam eu, port. Euismod nisi porta lorem mollis aliquam. Sed faucibus turpis in eu mi. Convallis a cras semper auctor neque vitae tempus. Euismod quis viverra nibh cras pulvinar mattis nunc sed.",
+			thumb: 'dist/img/posts/post-2-380.jpg',
 			thumbAlt: 'delicious green soup',
 			label: 'quick & easy',
 			likes: 109,
@@ -26,7 +26,7 @@ function insertPosts() {
 		{
 			type: "medium",
 			title: "Healthy Desserts That Are Full of Almost All Vitamins",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu.",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Vivamus at augue eget arcu dictum varius duis at consectetur. Quam viverra orci sagittis eu. Eu volutpat odio facilisis mauris sit amet massa. Sem et tortor consequat id porta nibh venenatis cras. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
 			label: 'sweet-tooth',
@@ -37,7 +37,7 @@ function insertPosts() {
 		{
 			type: "medium",
 			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu.",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
 			label: 'sweet-tooth',

@@ -237,7 +237,7 @@
 				margin-left: auto;
 				position: relative;
 
-				width: calc(100vw - 4rem - 23.7rem - 6.6rem - 4rem);
+				width: unquote("min(calc(100vw - 4rem - 23.7rem - 6.6rem - 4rem), 31rem)");
 				// 100% viewport - padding - logo & menu - profile icon - padding
 			}
 
@@ -266,6 +266,13 @@
 			}
 			&__avatar-wrap {
 				width: 4.2rem;
+			}
+		}
+	}
+	@include breakpoint(t) {
+		.search-bar {
+			&__wrap {
+				width: 31rem;
 			}
 		}
 	}

@@ -26,17 +26,10 @@
 			flex-wrap: wrap;
 			align-items: flex-start;
 		}
-
-		.post-excerpt {
-			flex: 1 0 calc(50% - 2rem);
-
-			&:nth-of-type(odd) {
-				margin-right: 1rem;
-			}
-
-			&:nth-of-type(even) {
-				margin-left: 1rem;
-			}
+	}
+	@include breakpoint(t) {
+		.row {
+			max-width: 74rem;
 		}
 	}
 }

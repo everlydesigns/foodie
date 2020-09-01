@@ -8,7 +8,7 @@
 	margin-left: auto;
 	margin-right: auto;
 
-	@include breakpoint(mt) {
-		// ...
+	@include breakpoint(lm) {
+		max-width: 42rem;
 	}
 }

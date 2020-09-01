@@ -70,4 +70,10 @@
 	&__social-instagram:before {
 		content: "\f16d";
 	}
+
+	/* Responsive
+	/*--------------------------------------------------------------------------*/
+	@include breakpoint(st) {
+		display: none;
+	}
 }

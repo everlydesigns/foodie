@@ -33,6 +33,17 @@ function insertPosts() {
 			likes: 86,
 			comments: 39,
 			rating: 3.34
+		},
+		{
+			type: "medium",
+			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu.",
+			thumb: 'dist/img/posts/post-1-380.jpeg',
+			thumbAlt: 'bowl of fruit on a blue marble background',
+			label: 'sweet-tooth',
+			likes: 79,
+			comments: 51,
+			rating: 4.21
 		}
 	];
 
@@ -99,15 +110,46 @@ function postExptInit() {
 		}
 	})
 
-
 } postExptInit();
 
 /* Initialize header and nav functionality
 /*--------------------------------------------------------------------------*/
 function headerNavInit() {
+
+	function disableScroll() {
+		window.scrollTo(0, 0);
+		// console.log('hi');
+	}
+	const toggleScroll = () => {
+		document.body.classList.toggle('no-scroll')
+	}
+
+	// toggle navigation panel
+	const toggleMenu = () => {
+		const headerEl = document.querySelector('.header');
+
+		// toggle button class
+		headerEl.classList.toggle('header--opened');
+
+		// toggle scrolling ability
+		toggleScroll();
+
+		// enable or disable scroll depending on the menu state
+		/*if ( headerEl.classList.contains('header--opened') ) {
+			window.addEventListener('scroll', disableScroll);
+		} else {
+			window.removeEventListener('scroll', disableScroll);
+		}*/
+	}
 	// click event for menu toggle
 	document.querySelector('.header__menu-toggle').addEventListener('click', () => {
-		document.querySelector('.header').classList.toggle('header--opened');
+		toggleMenu();
+	});
+
+	document.querySelector('.nav-panel').addEventListener('click', function(e) {
+		if ( e.target.classList.contains('nav-panel') ) {
+			toggleMenu();
+		}
 	});
 
 	// click event for navigation checkboxes

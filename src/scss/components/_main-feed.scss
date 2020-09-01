@@ -15,5 +15,28 @@
 		border-radius: 2.4rem;
 		display: flex;
 		margin: 3.6rem auto 4.2rem;
+		cursor: pointer;
+	}
+
+	@include breakpoint(st) {
+		.row {
+			max-width: none;
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+
+		.post-excerpt {
+			flex: 1 0 calc(50% - 2rem);
+
+			&:nth-of-type(odd) {
+				margin-right: 1rem;
+			}
+
+			&:nth-of-type(even) {
+				margin-left: 1rem;
+			}
+		}
 	}
 }

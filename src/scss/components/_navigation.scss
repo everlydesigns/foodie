@@ -9,12 +9,16 @@
 	right: 0;
 	bottom: 0;
 	z-index: 999 - 1;
-	background: var(--clr-primary-400);
-	padding-top: 4.8rem;
-	overflow-y: auto;
 
 	@at-root .header--opened ~ .nav-panel {
 		display: block;
+	}
+
+	&__wrap {
+		background: var(--clr-primary-400);
+		padding-top: 4.8rem;
+		overflow-y: auto;
+		height: 100%;
 	}
 
 	/* Nav footer
@@ -34,6 +38,23 @@
 			border-radius: .1rem;
 			background: rgba(var(--clr-primary-600-rgb), .4);
 			z-index: 1;
+		}
+
+		@include breakpoint(st) {
+			display: block;
+		}
+	}
+
+	@include breakpoint(st) {
+		background: rgba(black, .6);
+
+		@at-root .header--opened ~ .nav-panel {
+			width: 100%;
+		}
+
+		&__wrap {
+			right: auto;
+			width: 34rem;
 		}
 	}
 }
@@ -61,10 +82,15 @@
 	/*--------------------------------------------------------------------------*/
 	&--search {
 		margin-bottom: 3rem;
+
+		@include breakpoint(st) {
+			display: none;
+		}
 	}
 
 	.search-bar {
 		height: 5.4rem;
+		box-shadow: 0 .1rem .4rem rgba(var(--clr-primary-800-rgb),.11);
 	}
 
 	/* Browse posts section
@@ -94,6 +120,7 @@
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
+	box-shadow: 0 .1rem .4rem rgba(var(--clr-primary-800-rgb),.11);
 
 	&__item {
 		font-size: 1.6rem;

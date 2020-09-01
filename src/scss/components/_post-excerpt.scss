@@ -142,12 +142,14 @@
 	&__interaction-bar {
 		border-top: .1rem solid var(--clr-shade-100);
 		padding: 1.8rem .2rem 2.1rem;
+		display: flex;
 	}
 
 	// interaction items general
 	&__interaction-primary {
 		display: flex;
 		align-items: center;
+		flex: 1;
 
 		> div {
 			display: flex;
@@ -242,5 +244,43 @@
 	/*--------------------------------------------------------------------------*/
 	&__rating {
 		display: none;
+
+		@include breakpoint(lm) {
+			display: block;
+
+			&-stars {
+				display: flex;
+
+				&:hover {
+					.post-excerpt__rating-star {
+						background-image: url(/dist/img/star.svg);
+						opacity: 1;
+					}
+				}
+
+			}
+
+			&-star {
+				width: 1.5rem + 0.2rem;
+				height: 1.5rem;
+				background: url(/dist/img/star.svg) no-repeat center;
+				cursor: pointer;
+
+				&:hover {
+					~ div {
+						opacity: .4!important;
+					}
+				}
+			}
+
+			// custom rating
+			@for $i from 1 through 4 {
+				&-stars--#{$i} {
+					div:nth-child(n + #{$i + 1}) {
+						opacity: .4;
+					}
+				}
+			}
+		}
 	}
 }

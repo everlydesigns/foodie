@@ -32,7 +32,7 @@ function insertPosts() {
 			label: 'sweet-tooth',
 			likes: 86,
 			comments: 39,
-			rating: 4.34
+			rating: 3.34
 		}
 	];
 
@@ -63,7 +63,9 @@ function insertPosts() {
 		newPostExcerpt.querySelector('.post-excerpt__likes-label').innerText = `${post.likes} ${( post.likes === 1 ? 'like' : 'likes' )}`;
 		newPostExcerpt.querySelector('.post-excerpt__comments-label').innerHTML = `${post.comments} <span class="screen-reader-text">${( post.comments === 1 ? 'comment' : 'comments' )}</span>`;
 
-		// TODO: Rating
+		// rating
+		newPostExcerpt.querySelector('.post-excerpt__rating .screen-reader-text').innerText = "Rating: "+ post.rating;
+		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
 
 		// append to the feed
 		postFeed.insertBefore(newPostExcerpt, loadMoreBtn);
@@ -72,6 +74,33 @@ function insertPosts() {
 
 } insertPosts();
 
+
+/* Posts excerpt interaction init
+/*--------------------------------------------------------------------------*/
+function postExptInit() {
+
+	// Make bookmark & likes button clickable
+	document.querySelector('.main-feed').addEventListener('click', (e) => {
+
+		// bookmark button
+		if ( e.target.classList.contains('post-excerpt__bookmark-btn') ) {
+			e.target.classList.toggle('checked');
+		}
+
+		// likes button
+		if ( e.target.classList.contains('post-excerpt__like-btn') ) {
+			e.target.classList.toggle('checked');
+		}
+		// rating functionality
+		if ( e.target.classList.contains('post-excerpt__rating-star') ) {
+			let setRating = [...e.target.parentElement.children].indexOf(e.target) + 1;
+
+			e.target.parentElement.setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ setRating);
+		}
+	})
+
+
+} postExptInit();
 
 /* Initialize header and nav functionality
 /*--------------------------------------------------------------------------*/
@@ -105,18 +134,3 @@ function searchBarInit() {
 		})
 	}
 } searchBarInit();
-
-/* Make interaction items clickable
-/*--------------------------------------------------------------------------*/
-document.querySelector('.main-feed').addEventListener('click', (e) => {
-
-	// bookmark button
-	if ( e.target.classList.contains('post-excerpt__bookmark-btn') ) {
-		e.target.classList.toggle('checked');
-	}
-
-	// likes button
-	if ( e.target.classList.contains('post-excerpt__like-btn') ) {
-		e.target.classList.toggle('checked');
-	}
-})

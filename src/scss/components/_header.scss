@@ -69,6 +69,11 @@
 		&:hover {
 			background: rgba(255,255,255,0.1);
 		}
+
+		@include breakpoint(lm) {
+			margin-left: 1rem;
+			border-radius: .4rem;
+		}
 	}
 
 	&__menu-toggle-icon {

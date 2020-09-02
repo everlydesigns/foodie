@@ -3,14 +3,17 @@
 /*==========================================================================*/
 
 
-/* Insert post excerpts (DRY)
+/* Initialize main feed
 /*--------------------------------------------------------------------------*/
-function insertPosts() {
+function mainFeedPostsInit() {
 	const postExcerptBase = document.querySelector('.post-excerpt');
 	const postFeed = document.querySelector('.main-feed .row');
-	const loadMoreBtn = document.querySelector('.main-feed__load-more');
+	const loadMoreWrap = document.querySelector('.main-feed__load-more');
+	const loadMoreBtn = document.querySelector('.main-feed__load-more-btn');
 	let largePostsCount = 1;
+	let insertedPosts = 0;
 
+	// all posts
 	const posts = [
 		{
 			type: "large",
@@ -44,10 +47,44 @@ function insertPosts() {
 			likes: 79,
 			comments: 51,
 			rating: 4.21
-		}
+		},
+		{
+			type: "large",
+			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			thumb: 'dist/img/posts/post-1-380.jpeg',
+			thumbAlt: 'bowl of fruit on a blue marble background',
+			label: 'sweet-tooth',
+			likes: 79,
+			comments: 51,
+			rating: 4.21
+		},
+		{
+			type: "medium",
+			title: "Healthy Desserts That Are Full of Almost All Vitamins",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Vivamus at augue eget arcu dictum varius duis at consectetur. Quam viverra orci sagittis eu. Eu volutpat odio facilisis mauris sit amet massa. Sem et tortor consequat id porta nibh venenatis cras. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum.",
+			thumb: 'dist/img/posts/post-1-380.jpeg',
+			thumbAlt: 'bowl of fruit on a blue marble background',
+			label: 'sweet-tooth',
+			likes: 86,
+			comments: 39,
+			rating: 3.34
+		},
+		{
+			type: "medium",
+			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			thumb: 'dist/img/posts/post-1-380.jpeg',
+			thumbAlt: 'bowl of fruit on a blue marble background',
+			label: 'sweet-tooth',
+			likes: 79,
+			comments: 51,
+			rating: 4.21
+		},
 	];
 
-	posts.forEach((post, i) => {
+	// given post object inserts said post to the feed
+	function insertPost(post) {
 		const newPostExcerpt = document.createElement('article');
 		newPostExcerpt.setAttribute('class', `post-excerpt post-excerpt--${post.type}`);
 
@@ -79,11 +116,32 @@ function insertPosts() {
 		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
 
 		// append to the feed
-		postFeed.insertBefore(newPostExcerpt, loadMoreBtn);
-	});
+		postFeed.insertBefore(newPostExcerpt, loadMoreWrap);
+		insertedPosts++;
+	}
 
+	// insert 3 posts at first
+	for (let i = 0; i < 3; i++) {
+		insertPost(posts[i]);
+	}
 
-} insertPosts();
+	loadMoreBtn.addEventListener('click', function(e) {
+		this.classList.add('button--loading');
+
+		setTimeout(function () {
+			e.target.classList.remove('button--loading');
+
+			// insert 3 posts per 'page'
+			for (let i = insertedPosts; i < insertedPosts + 3; i++) {
+				if ( typeof posts[i] !== 'undefined' ) insertPost(posts[i]);
+				else {
+					loadMoreWrap.classList.add('reached-the-end');
+					break;
+				}
+			}
+		}, 400 + (Math.random() * 3 * 200));
+	})
+} mainFeedPostsInit();
 
 
 /* Posts excerpt interaction init

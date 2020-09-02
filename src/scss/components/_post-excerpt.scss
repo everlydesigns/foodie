@@ -28,6 +28,8 @@
 				border: .1rem solid rgba(black,0.08);
 				border-radius: inherit;
 				padding-bottom: 73.333333%;
+				position: relative;
+				z-index: 1;
 			}
 		}
 
@@ -287,7 +289,7 @@
 		}
 	}
 	@include breakpoint(st) {
-		flex: 1 0 calc(50% - 2rem);
+		flex: 0 0 calc(50% - 1rem);
 
 		&:nth-of-type(odd) {
 			margin-right: 1rem;
@@ -302,8 +304,19 @@
 		}
 	}
 	@include breakpoint(t) {
+		margin-bottom: 2.4rem;
+		
 		&__rating {
 			display: block;
+		}
+
+		&:nth-of-type(odd), &:nth-of-type(even) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&--medium + .post-excerpt--medium {
+			margin-left: 2rem;
 		}
 
 		/* Large post styling
@@ -311,11 +324,6 @@
 		&--large {
 			flex: 1 0 100%;
 			display: flex;
-
-			&:nth-of-type(odd), &:nth-of-type(even) {
-				margin-left: 0;
-				margin-right: 0;
-			}
 
 			.post-excerpt {
 				// Thumbnail
@@ -326,6 +334,7 @@
 
 				&__thumb-wrap {
 					width: 32rem;
+					border-radius: .6rem;
 
 					&:before {
 						padding-bottom: 100%;

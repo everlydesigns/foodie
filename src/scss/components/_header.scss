@@ -270,9 +270,21 @@
 		}
 	}
 	@include breakpoint(t) {
+		&__logo {
+			width: 11.2rem;
+		}
+
+		&__logo-background {
+			height: 9rem;
+			padding-left: 2.6rem;
+			padding-right: 2.6rem;
+		}
+
 		.search-bar {
+			flex: 0 1 auto;
+
 			&__wrap {
-				width: 31rem;
+				width: 42vw;
 			}
 		}
 	}

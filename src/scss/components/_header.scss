@@ -288,4 +288,77 @@
 			}
 		}
 	}
+	@include breakpoint(tp) {
+		.search-bar {
+			&__wrap {
+				width: 35vw;
+			}
+		}
+
+		.profile-widget {
+			&__user-name {
+				display: block;
+				background: #fff;
+				font-size: 1.7rem;
+				line-height: 2.4rem;
+				font-weight: 500;
+				color: var(--clr-secondary-400);
+				padding: .9rem 1.7rem .9rem 4.8rem;
+				border-radius: 2.1rem;
+				margin-left: -4.2rem;
+			}
+		}
+	}
+	@include breakpoint(dp) {
+		&__wrap {
+			box-shadow: none;
+		}
+
+		&__logo-background {
+			padding-left: 3.2rem;
+			padding-right: 3.2rem;
+			height: 10.8rem;
+		}
+		&__logo {
+			width: 13.2rem;
+		}
+
+		&__menu-toggle {
+			display: none;
+		}
+		&__nav-links {
+			display: block;
+			list-style-type: none;
+			display: flex;
+			color: var(--clr-primary-200);
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			padding-left: 2rem;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+		&__nav-link {
+			padding: .9rem 1rem;
+			border-radius: 2.1rem;
+
+			&--active {
+				background: var(--clr-primary-200);
+				color: var(--clr-secondary-400);
+				padding-left: 2rem;
+				padding-right: 2rem;
+				margin-right: 1rem;
+			}
+		}
+
+		.search-bar {
+			&__wrap {
+				width: 38rem;
+			}
+		}
+	}
 }

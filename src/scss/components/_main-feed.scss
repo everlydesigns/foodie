@@ -82,9 +82,20 @@
 	}
 	@include breakpoint(t) {
 		padding-top: 5.4rem;
-		
+
 		.row {
 			max-width: 74rem;
 		}
+	}
+	@include breakpoint(tp) {
+		padding-top: 5.4rem;
+
+		.row {
+			max-width: 86rem;
+		}
+	}
+	@include breakpoint(dp) {
+		padding-left: 34rem;
+		padding-top: 4.8rem;
 	}
 }

@@ -26,6 +26,7 @@ function mainFeedPostsInit() {
 			comments: 63,
 			rating: 4.89
 		},
+
 		{
 			type: "medium",
 			title: "Healthy Desserts That Are Full of Almost All Vitamins",
@@ -48,9 +49,10 @@ function mainFeedPostsInit() {
 			comments: 51,
 			rating: 4.21
 		},
+
 		{
 			type: "large",
-			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
+			title: "The Easiest and Most Fun Way to Add Berries and Fruits to Your Diet",
 			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
@@ -59,9 +61,10 @@ function mainFeedPostsInit() {
 			comments: 51,
 			rating: 4.21
 		},
+
 		{
 			type: "medium",
-			title: "Healthy Desserts That Are Full of Almost All Vitamins",
+			title: "Easy Guide to Making Your Own Juices From Scratch",
 			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Vivamus at augue eget arcu dictum varius duis at consectetur. Quam viverra orci sagittis eu. Eu volutpat odio facilisis mauris sit amet massa. Sem et tortor consequat id porta nibh venenatis cras. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
@@ -72,7 +75,19 @@ function mainFeedPostsInit() {
 		},
 		{
 			type: "medium",
-			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
+			title: "Sweet Recipes That You Can Make From Pure Leftovers",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			thumb: 'dist/img/posts/post-1-380.jpeg',
+			thumbAlt: 'bowl of fruit on a blue marble background',
+			label: 'sweet-tooth',
+			likes: 79,
+			comments: 51,
+			rating: 4.21
+		},
+		
+		{
+			type: "large",
+			title: "Make Unbelievably Tasty Pancakes with Those 5 Healthy Ingredients",
 			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
@@ -179,7 +194,7 @@ function headerNavInit() {
 		// console.log('hi');
 	}
 	const toggleScroll = () => {
-		document.body.classList.toggle('no-scroll')
+		document.body.classList.toggle('nav-opened');
 	}
 
 	// toggle navigation panel

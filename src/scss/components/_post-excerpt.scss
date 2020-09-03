@@ -298,40 +298,22 @@
 		}
 	}
 	@include breakpoint(st) {
-		flex: 0 0 calc(50% - 1rem);
-
-		&:nth-of-type(odd) {
-			margin-right: 1rem;
-		}
-
-		&:nth-of-type(even) {
-			margin-left: 1rem;
-		}
+		margin-bottom: 0;
 
 		&__rating {
 			display: none;
 		}
 	}
 	@include breakpoint(t) {
-		margin-bottom: 2.4rem;
 
 		&__rating {
 			display: block;
 		}
 
-		&:nth-of-type(odd), &:nth-of-type(even) {
-			margin-left: 0;
-			margin-right: 0;
-		}
-
-		&--medium + .post-excerpt--medium {
-			margin-left: 2rem;
-		}
-
 		/* Large post styling
 		/*--------------------------------------------------------------------------*/
 		&--large {
-			flex: 1 0 100%;
+			grid-column-end: span 2;
 			display: flex;
 
 			.post-excerpt {
@@ -479,6 +461,41 @@
 				&__interaction-bar {
 					padding-top: 2.1rem;
 					padding-bottom: 2.4rem;
+				}
+			}
+		}
+	}
+	@include breakpoint(hd) {
+		// Large post excerpt (huge desktop)
+		&--large {
+			.post-excerpt {
+				&__thumb-wrap {
+					height: 47.4rem;
+					width: 42rem;
+
+					&:before {
+						height: 100%;
+					}
+				}
+
+				&__excerpt {
+					max-height: 8 * 2.4rem;
+				}
+			}
+		}
+
+		// Post excerpt large & left aligned
+		&--large.post-excerpt--left {
+			grid-column-start: 2;
+		}
+
+		// Medium post excerpt
+		&--medium {
+			.post-excerpt {
+				&__thumb-wrap {
+					&:before {
+						padding-bottom: 66.666667%; // 2:3 aspect ratio
+					}
 				}
 			}
 		}

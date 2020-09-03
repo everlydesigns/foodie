@@ -30,7 +30,7 @@ function mainFeedPostsInit() {
 		{
 			type: "medium",
 			title: "Healthy Desserts That Are Full of Almost All Vitamins",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Vivamus at augue eget arcu dictum varius duis at consectetur. Quam viverra orci sagittis eu. Eu volutpat odio facilisis mauris sit amet massa. Sem et tortor consequat id porta nibh venenatis cras. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum.",
+			excerpt: "So you ate your dinner and now you can enjoy some desert. Ex sed duis duis nulla, o cernantur ea officia, aute probant id fidelissimae est id ea nulla quibusdam quo aut ex fore amet malis est sed illum amet nisi voluptate, senserit noster possumus deserunt de cupidatat summis cernantur. Export nostrud o senserit ea ea noster irure duis iudicem. Cernantur ad anim deserunt.Quo ubi culpa aute aute ut quorum est ad aute proident. Id irure arbitrantur an o ingeniis o excepteur, et elit aute ab consequat quo commodo si cillum. Aute litteris praetermissum.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
 			label: 'sweet-tooth',
@@ -41,10 +41,10 @@ function mainFeedPostsInit() {
 		{
 			type: "medium",
 			title: "Budget-Friendly Tacos That Will Fit Anyone’s Busy Day",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			excerpt: "It doesn’t matter if it’s Tuesday, you can enjoy tacos any day! Venenatis sodales auctor pretium ipsum mollis dui nisl euismod ultrices laoreet lacinia id nunc quam pellentesque per proin rutrum arcu dictum risus luctus Hymenaeos sed rutrum libero. Class aliquam faucibus nibh. Congue class consectetuer. Curae; sollicitudin duis rhoncus integer eget magna commodo vel vulputate. Rhoncus, interdum gravida. Venenatis quisque. Odio tortor.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
-			label: 'sweet-tooth',
+			label: 'budget meals',
 			likes: 79,
 			comments: 51,
 			rating: 4.21
@@ -53,48 +53,48 @@ function mainFeedPostsInit() {
 		{
 			type: "large",
 			title: "The Easiest and Most Fun Way to Add Berries and Fruits to Your Diet",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			excerpt: "If you haven’t heard already, berries are full of amazing nutrients.  Bibendum hendrerit cum accumsan. In eleifend maecenas Non commodo dapibus suscipit dictum ullamcorper, commodo. Taciti purus facilisis maecenas fermentum pede varius nostra, natoque, facilisis tempor. Erat. Odio. Eget phasellus metus inceptos litora turpis. Tincidunt aptent primis nascetur ut mauris consequat purus. Elit litora mauris ad nunc eget. Vel quisque lobortis blandit.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
-			label: 'sweet-tooth',
-			likes: 79,
-			comments: 51,
-			rating: 4.21
+			label: 'Recipe idea',
+			likes: 284,
+			comments: 155,
+			rating: 4.83
 		},
 
 		{
 			type: "medium",
 			title: "Easy Guide to Making Your Own Juices From Scratch",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Vivamus at augue eget arcu dictum varius duis at consectetur. Quam viverra orci sagittis eu. Eu volutpat odio facilisis mauris sit amet massa. Sem et tortor consequat id porta nibh venenatis cras. Tempus imperdiet nulla malesuada pellentesque elit eget gravida cum.",
+			excerpt: "The juicing craze is real guys and I’s so happy about that! Mi nec fermentum facilisis nulla et imperdiet posuere senectus purus pharetra convallis amet dis Elit euismod Vivamus hac torquent. Magnis egestas A, habitant aptent urna, hymenaeos orci fermentum. Nam felis libero enim, rutrum habitant scelerisque velit nunc, imperdiet curabitur tristique montes ut, blandit est nonummy curae.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
-			label: 'sweet-tooth',
-			likes: 86,
-			comments: 39,
-			rating: 3.34
+			label: 'Back 2 basics',
+			likes: 91,
+			comments: 29,
+			rating: 4.92
 		},
 		{
 			type: "medium",
 			title: "Sweet Recipes That You Can Make From Pure Leftovers",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			excerpt: "Ask any raccoon, leftovers are amazing. Don’t just throw food away! you can use is in those recipes! At primis praesent facilisis fames donec augue, placerat dictumst ipsum suscipit hendrerit aliquet, faucibus gravida tristique feugiat penatibus mauris mauris quis ultricies enim mollis posuere feugiat suscipit nostra viverra Feugiat lorem eget euismod molestie risus fringilla praesent vestibulum. Malesuada.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
 			label: 'sweet-tooth',
-			likes: 79,
-			comments: 51,
-			rating: 4.21
+			likes: 24,
+			comments: 5,
+			rating: 4.84
 		},
-		
+
 		{
 			type: "large",
 			title: "Make Unbelievably Tasty Pancakes with Those 5 Healthy Ingredients",
-			excerpt: "So you ate your dinner and now you can enjoy some desert. Consectetur adipiscing elit vitae sapien mollis, sagittis quam eu. Diam vulputate ut pharetra sit amet aliquam id diam maecenas. Sed risus pretium quam vulputate. At urna condimentum mattis pellentesque. Tortor pretium viverra suspendisse potenti.",
+			excerpt: "Nothing says breakfast like fragrant pancakes in the morning. Quisque conubia imperdiet, risus, praesent eget nonummy ad diam vitae augue ridiculus sociis enim tempus leo mi dis id fringilla dui parturient nam metus. Faucibus commodo. Faucibus risus. Magna nulla dapibus nostra, venenatis fringilla elementum congue felis class posuere neque nam condimentum ac nec Potenti bibendum placerat id taciti. Penatibus tellus fermentum nibh erat mus pretium varius proin mauris risus pede lorem feugiat semper penatibus Nunc. Etiam, nisi per mi pulvinar class bibendum.",
 			thumb: 'dist/img/posts/post-1-380.jpeg',
 			thumbAlt: 'bowl of fruit on a blue marble background',
-			label: 'sweet-tooth',
-			likes: 79,
-			comments: 51,
-			rating: 4.21
+			label: '5 ingredients',
+			likes: 63,
+			comments: 19,
+			rating: 4.43
 		},
 	];
 

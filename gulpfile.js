@@ -42,6 +42,14 @@ function jsBabelMin() {
 /* Optimize graphics
 /*--------------------------------------------------------------------------*/
 function imgOptimize() {
+	return src('src/img/*')
+		.pipe(image())
+		.pipe(dest('./dist/img'))
+}
+
+/* Generate thumbnails
+/*--------------------------------------------------------------------------*/
+function generateThumbnails() {
 	// Resize and optimize post media
 	let optimizePosts1 = src('src/img/posts/*')
 		.pipe(resize({
@@ -54,10 +62,10 @@ function imgOptimize() {
 	// max width 380px + retina
 	let optimizePosts2 = src('src/img/posts/*')
 		.pipe(resize({
-			width: (380 * 2)
+			width: (420 * 2)
 		}))
 		.pipe(image())
-		.pipe(rename({suffix: '-380@2x' }))
+		.pipe(rename({suffix: '-420@2x' }))
 		.pipe(dest('./dist/img/posts'))
 		.pipe(resize({
 			width: '50%'
@@ -92,13 +100,13 @@ function imgOptimize() {
 	// max width 260px + retina
 	let optimizePosts4 = src('src/img/posts/*')
 		.pipe(resize({
-			height: (260 * 2)
+			width: (260 * 2)
 		}))
 		.pipe(image())
-		.pipe(rename({suffix: '-x260@2x' }))
+		.pipe(rename({suffix: '-260@2x' }))
 		.pipe(dest('./dist/img/posts'))
 		.pipe(resize({
-			height: '50%'
+			width: '50%'
 		}))
 		.pipe(image())
 		.pipe(rename(path => ({
@@ -108,18 +116,12 @@ function imgOptimize() {
 		})))
 		.pipe(dest('./dist/img/posts'))
 
-	// Optimize site graphics
-	let optimizeGraphics = src('src/img/*')
-		.pipe(image())
-		.pipe(dest('./dist/img'))
-
 	// merge all actions
 	return merge(
 		optimizePosts1,
 		optimizePosts2,
 		optimizePosts3,
 		optimizePosts4,
-		optimizeGraphics
 	);
 }
 
@@ -153,3 +155,7 @@ task('js', jsBabelMin)
 /* IMG Task
 /*--------------------------------------------------------------------------*/
 task('img', imgOptimize)
+
+/* Generate Thumbnails Task
+/*--------------------------------------------------------------------------*/
+task('thumbnails', generateThumbnails)

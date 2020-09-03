@@ -42,7 +42,7 @@ function jsBabelMin() {
 /* Optimize graphics
 /*--------------------------------------------------------------------------*/
 function imgOptimize() {
-	return src('src/img/*')
+	return src(['src/img/**/*', '!src/img/posts/*'])
 		.pipe(image())
 		.pipe(dest('./dist/img'))
 }
@@ -121,7 +121,7 @@ function generateThumbnails() {
 		optimizePosts1,
 		optimizePosts2,
 		optimizePosts3,
-		optimizePosts4,
+		optimizePosts4
 	);
 }
 

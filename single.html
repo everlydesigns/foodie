@@ -4,23 +4,324 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Title</title>
+	<title>10 Ways to Add More Tasty Fruit to Your Every Day Diet - foodie! - Heavenly Recipes</title>
 	<!-- <meta name="description" content="DESCRIPTION"> -->
-	<!-- <link rel="icon" href="dist/img/favicon.png" type="image/png"> -->
-	<link rel="stylesheet" href="dist/css/style.css">
+	<link rel="icon" href="dist/img/favicon-32.png" type="image/png">
+	<link rel="apple-touch-icon" sizes="128x128" href="dist/img/favicon-128.png">
+	<link rel="stylesheet" href="dist/css/main.css">
 
 	<!-- Social Media -->
-	<!--<meta property="og:title" content="Title">
-	<meta property="og:url" content="https://example.com">
-	<meta property="og:image" content="https://example.com/image.jpg">
+	<meta property="og:title" content="foodie! - Heavenly Recipes">
+	<meta property="og:url" content="https://foodie.example.com">
+	<meta property="og:image" content="https://foodie.example.com/cover.jpg">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@twitterHandle">
-	<meta name="twitter:image" content="https://example.com/image.jpg">-->
+	<meta name="twitter:site" content="@foodieExample">
+	<meta name="twitter:image" content="https://foodie.example.com/cover-2.jpg">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-	<h1>Hello!</h1>
+	<!-- Header -->
+	<header class="header">
+		<div class="header__wrap">
+			<div class="header__logo-nav-wrap">
+				<div class="header__logo-background">
+					<img src="dist/img/logo.svg" alt="Site logo" class="header__logo">
+					<a href="index.html" class="header__logo-link"></a>
+				</div>
+
+				<ul class="header__nav-links">
+					<li><a href="#" class="header__nav-link header__nav-link--active">Recipes</a></li>
+					<li><a href="#" class="header__nav-link">About</a></li>
+					<li><a href="#" class="header__nav-link">Contact</a></li>
+				</ul>
+
+				<button class="header__menu-toggle">
+					<span class="header__menu-toggle-icon"></span>
+					<span class="header__menu-toggle__open-text">Menu</span>
+					<span class="header__menu-toggle__close-text">Close</span>
+				</button>
+			</div>
+
+			<!-- Search bar -->
+			<form class="search-bar" action="#" method="post">
+				<div class="search-bar__wrap">
+					<input type="text" class="search-bar__input" placeholder="Search for recipes">
+					<button type="submit" class="search-bar__submit">Search</button>
+				</div>
+			</form>
+
+			<div class="profile-widget">
+				<div class="profile-widget__avatar-badge-wrap">
+					<div class="profile-widget__badge">2</div>
+					<div class="profile-widget__avatar-wrap">
+						<img src="dist/img/user-1.jpg" alt="Your set profile picture" class="profile-widget__avatar">
+					</div>
+				</div>
+				<span class="profile-widget__user-name">Emily</span>
+			</div>
+		</div>
+	</header>
+
+	<!-- Nav panel -->
+	<div class="nav-panel">
+		<div class="nav-panel__wrap">
+
+			<!-- Nav sections top -->
+			<nav class="nav-sections">
+
+				<!-- Search -->
+				<div class="nav-section nav-section--search">
+					<h2 class="screen-reader-text">Search for recipes</h2>
+
+					<!-- Search bar -->
+					<form class="search-bar" action="#" method="post">
+						<input type="text" class="search-bar__input" placeholder="Search for recipes">
+						<button type="submit" class="search-bar__submit">Search</button>
+					</form>
+				</div>
+
+				<!-- Related guides section -->
+				<div class="nav-section nav-section--related-guides">
+					<h2 class="nav-section__title">Related guides</h2>
+
+					<ul class="nav-links">
+						<li class="nav-links__item nav-links__item--link-thumb">
+							<img src="dist/img/guides/guide-1.jpg" srcset="dist/img/guides/guide-1.jpg 1x, dist/img/guides/guide-1@2x.jpg 2x, dist/img/guides/guide-1@4x.jpg 4x" alt="guide image" class="nav-links__item-thumb">
+							<a href="index.html" class="nav-links__item-link-label">Meal ideas full of fruit, veggies and fibre</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link-thumb">
+							<img src="dist/img/guides/guide-2.jpg" srcset="dist/img/guides/guide-2.jpg 1x, dist/img/guides/guide-2@2x.jpg 2x, dist/img/guides/guide-2@4x.jpg 4x" alt="guide image" class="nav-links__item-thumb">
+							<a href="index.html" class="nav-links__item-link-label">Budget meals for large families or parties</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link-thumb">
+							<img src="dist/img/guides/guide-3.jpg" srcset="dist/img/guides/guide-3.jpg 1x, dist/img/guides/guide-3@2x.jpg 2x, dist/img/guides/guide-3@4x.jpg 4x" alt="guide image" class="nav-links__item-thumb">
+							<a href="index.html" class="nav-links__item-link-label">Party snacks ideas for kid’s birthday</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link-thumb">
+							<img src="dist/img/guides/guide-4.jpg" srcset="dist/img/guides/guide-4.jpg 1x, dist/img/guides/guide-4@2x.jpg 2x, dist/img/guides/guide-4@4x.jpg 4x" alt="guide image" class="nav-links__item-thumb">
+							<a href="index.html" class="nav-links__item-link-label">Special food deals near your location</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Recipe Finder section -->
+				<div class="nav-section nav-section--browse nav-section--recipe-finder">
+					<h2 class="nav-section__title">Recipe finder</h2>
+
+					<ul class="nav-links">
+						<li class="nav-links__item nav-links__item--checkbox">
+							<button class="nav-links__item-checkbox"></button>
+							<div class="nav-links__item-label">Dairy-free recipes</div>
+							<div class="nav-links__item-stat">841</div>
+						</li>
+
+						<li class="nav-links__item nav-links__item--checkbox">
+							<button class="nav-links__item-checkbox checked"></button>
+							<div class="nav-links__item-label">Egg-free recipes</div>
+							<div class="nav-links__item-stat">385</div>
+						</li>
+
+						<li class="nav-links__item nav-links__item--checkbox">
+							<button class="nav-links__item-checkbox"></button>
+							<div class="nav-links__item-label">Gluten-free recipes</div>
+							<div class="nav-links__item-stat">59</div>
+						</li>
+
+						<li class="nav-links__item nav-links__item--checkbox">
+							<button class="nav-links__item-checkbox checked"></button>
+							<div class="nav-links__item-label">Low-carb & Keto</div>
+							<div class="nav-links__item-stat">630</div>
+						</li>
+
+						<li class="nav-links__item nav-links__item--checkbox">
+							<button class="nav-links__item-checkbox"></button>
+							<div class="nav-links__item-label">Nut-free recipes</div>
+							<div class="nav-links__item-stat">291</div>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Advertisement section -->
+				<div class="nav-section nav-section--advertisement">
+					<h2 class="nav-section__title">Advertisement</h2>
+
+					<div class="nav-advert">
+						<div class="advert-holder">250 &times; 250</div>
+					</div>
+				</div>
+
+				<!-- Quick links section -->
+				<div class="nav-section nav-section--quick-links">
+					<h2 class="nav-section__title">Quick links</h2>
+
+					<ul class="nav-links">
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Top recipes this month</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Eating on a budget</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Recently added recipies</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Review of the top diets</a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- Mobile nav links -->
+				<div class="nav-section nav-section--site-navigation">
+					<h2 class="nav-section__title">Site navigation</h2>
+
+					<ul class="nav-links">
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Browse recipes</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">About the company</a>
+						</li>
+
+						<li class="nav-links__item nav-links__item--link">
+							<a href="#" class="nav-links__item-link-label">Get in touch with us</a>
+						</li>
+					</ul>
+				</div>
+
+
+			</nav>
+
+			<!-- Nav panel footer -->
+			<footer class="footer">
+				<div class="footer__logo-wrap">
+					<a href="#" class="footer__logo-link-wrap">
+						<img src="dist/img/footer-logo.svg" alt="Site logo for the footer" class="footer__logo">
+					</a>
+					<span class="footer__brand-details"><b>Good+Food&trade;</b> brand</span>
+				</div>
+
+				<div class="footer__misc">
+					<small class="footer__legal">Copyright &copy; 2020. All rights reserved. Designed and developed by <a href="https://everlydesign.co/portfolio/foodie">everlydesign.co</a> for fun!</small>
+
+					<div class="footer__social-media">
+						<a href="#" class="footer__social-facebook"></a>
+						<a href="#" class="footer__social-twitter"></a>
+						<a href="#" class="footer__social-instagram"></a>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<!-- Main feed -->
+	<main class="main-feed">
+		<div class="row">
+			<article class="post-excerpt post-excerpt--large post-excerpt--left">
+				<div class="post-excerpt__thumb">
+					<div class="post-excerpt__thumb-wrap">
+						<a href="single.html">
+							<img src="dist/img/posts/post-1-320.jpg" alt="3 delicious smoothies with fruit" srcset="dist/img/posts/post-1-1520.jpg 1520w, dist/img/posts/post-1-420@2x.jpg 840w, dist/img/posts/post-1-420.jpg 420w, dist/img/posts/post-1-320@2x.jpg 640w, dist/img/posts/post-1-320.jpg 320w, dist/img/posts/post-1-260@2x.jpg 520w, dist/img/posts/post-1-260.jpg 260w" sizes="(min-width: 1640px) 420px, (min-width: 860px) 360px, (min-width: 740px) 320px, (min-width: 600px) calc(50vw - 70px), (min-width: 420px) 340px, calc(100vw - 80px)" class="post-excerpt__thumb-img">
+						</a>
+					</div>
+				</div>
+				<div class="post-excerpt__body">
+					<span class="post-excerpt__label">Recipe idea</span>
+
+					<div class="post-excerpt__content-wrap">
+						<h2 class="post-excerpt__headline"><a href="single.html">Spice Up Your Summer Smoothies with a Dash of Fruit, Nuts and Seeds!</a></h2>
+						<div class="post-excerpt__excerpt-body">
+							<p class="post-excerpt__excerpt">We all know that smoothies can get really boring, really quickly. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis interdum est. Sed elit neque, aliquam id enim sed, mollis pharetr. Et magnis dis parturient montes nascetur ridiculus mus mauris vitae. Vestibulum morbi blandit cursus risus at ultrices mi tempus.</p>
+							<div class="post-excerpt__read-more-fade">
+								<a href="single.html" class="post-excerpt__read-more">
+									<span class="post-excerpt__read-more-long">Read more</span>
+									<span class="post-excerpt__read-more-short">More</span>
+									<span class="post-excerpt__read-more-guillemet">&raquo;</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="post-excerpt__interaction-bar">
+						<div class="post-excerpt__interaction-primary">
+							<div class="post-excerpt__bookmark-wrap">
+								<button class="post-excerpt__bookmark-btn" title="Bookmark this post">
+									<img class="post-excerpt__bookmark-btn-icon svg-inject" src="dist/img/icon-bookmark.svg">
+									Bookmark this post
+								</button>
+								<span class="post-excerpt__bookmark-label screen-reader-text">Bookmark</span>
+							</div>
+
+							<div class="post-excerpt__likes-wrap">
+								<button class="post-excerpt__like-btn" title="Like this post?">
+									<img class="post-excerpt__like-btn-icon svg-inject" src="dist/img/icon-heart.svg">
+									Like this post?
+								</button>
+								<span class="post-excerpt__likes-label">124 likes</span>
+							</div>
+
+							<div class="post-excerpt__likes-comments">
+								<button class="post-excerpt__comments-btn" title="Show all comments">
+									<img class="post-excerpt__comments-btn-icon svg-inject" src="dist/img/icon-chat.svg">
+									Show all comments
+								</button>
+								<span class="post-excerpt__comments-label">84 <span class="screen-reader-text">comments</span></span>
+							</div>
+						</div>
+
+						<div class="post-excerpt__rating">
+							<span class="screen-reader-text">Rating: 4.8</span>
+							<div class="post-excerpt__rating-stars post-excerpt__rating-stars--4">
+								<div class="post-excerpt__rating-star"></div>
+								<div class="post-excerpt__rating-star"></div>
+								<div class="post-excerpt__rating-star"></div>
+								<div class="post-excerpt__rating-star"></div>
+								<div class="post-excerpt__rating-star"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<div class="main-feed__load-more">
+				<button class="main-feed__load-more-btn button button--secondary">Load more posts</button>
+				<span class="main-feed__load-more-end">You've reached the end of this list. <br>Thanks for scrolling!</span>
+			</div>
+		</div>
+	</main>
+
+	<!-- Mobile footer -->
+	<footer class="footer">
+		<div class="row">
+			<div class="footer__logo-wrap">
+				<a href="#" class="footer__logo-link-wrap">
+					<img src="dist/img/footer-logo.svg" alt="Site logo for the footer" class="footer__logo">
+				</a>
+				<span class="footer__brand-details"><b>Good+Food&trade;</b> brand</span>
+			</div>
+
+			<div class="footer__misc">
+				<small class="footer__legal">Copyright &copy; 2020. All rights reserved. Designed and developed by <a href="https://everlydesign.co/portfolio/foodie">everlydesign.co</a> for fun!</small>
+
+				<div class="footer__social-media">
+					<a href="#" class="footer__social-facebook"></a>
+					<a href="#" class="footer__social-twitter"></a>
+					<a href="#" class="footer__social-instagram"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 	<!-- Scripts -->
 	<script src="dist/js/script.js" charset="utf-8"></script>
+	<script src="dist/js/svg-injector.min.js" charset="utf-8"></script>
 </body>
 </html>

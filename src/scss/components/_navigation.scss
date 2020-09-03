@@ -121,18 +121,13 @@
 		box-shadow: 0 .1rem .4rem rgba(var(--clr-primary-800-rgb),.11);
 	}
 
-	/* Browse posts section
+	/* Browse section
 	/*--------------------------------------------------------------------------*/
-	&--browse-posts {
+	&--browse {
 		.nav-links {
 			padding-top: .9rem;
 			padding-bottom: .9rem;
 		}
-	}
-
-	/* Quick links section
-	/*--------------------------------------------------------------------------*/
-	&--quick-links {
 	}
 
 	@include breakpoint(dp) {
@@ -155,68 +150,47 @@
 
 	&__item {
 		font-size: 1.6rem;
-		line-height: 3rem;
+		line-height: 2.4rem;
 		font-weight: 500;
+	}
 
-		/* Checkbox items
-		/*--------------------------------------------------------------------------*/
-		&--checkbox {
-			height: 4.2rem;
-			display: flex;
-			align-items: center;
-			padding-left: 2.2rem;
-			padding-right: 2.2rem;
-			cursor: pointer;
-		}
 
-		&-checkbox {
-			height: 2rem;
-			width: 2rem;
-			padding: 0;
-			margin: 0;
-			background: var(--clr-primary-200);
-			border-radius: .6rem;
-			border: .3rem solid var(--clr-secondary-400);
-			margin-right: 1.2rem;
-			cursor: pointer;
+	/* Checkbox items
+	/*--------------------------------------------------------------------------*/
+	&__item--checkbox {
+		height: 4.2rem;
+		display: flex;
+		align-items: center;
+		padding-left: 2.2rem;
+		padding-right: 2.2rem;
+		cursor: pointer;
+	}
+	&__item-checkbox {
+		height: 2rem;
+		width: 2rem;
+		padding: 0;
+		margin: 0;
+		background: var(--clr-primary-200);
+		border-radius: .6rem;
+		border: .3rem solid var(--clr-secondary-400);
+		margin-right: 1.2rem;
+		cursor: pointer;
 
-			&.checked {
-				background: var(--clr-secondary-400) url('/dist/img/checkbox-tick.svg') no-repeat center center;
-				border-width: 0;
-			}
-		}
-
-		&-label {
-			flex: 1;
-		}
-
-		&-stat {
-			font-size: 1.4rem;
-			color: var(--clr-shade-600);
-		}
-
-		/* Link items
-		/*--------------------------------------------------------------------------*/
-		&--link {
-			padding-left: 1.6rem;
-			padding-right: 1.6rem;
-
-			&:hover {
-				background-color: var(--clr-primary-200);
-			}
-		}
-
-		&-link-label {
-			display: block;
-			color: var(--clr-primary-700);
-			border-bottom: .1rem solid var(--clr-primary-200);
-			padding-left: .5rem;
-			padding-top: .9rem;
-			padding-bottom: .9rem;
-			background: url(../img/caret-right.svg) no-repeat right center;
-			text-decoration: none;
+		&.checked {
+			background: var(--clr-secondary-400) url('/dist/img/checkbox-tick.svg') no-repeat center center;
+			border-width: 0;
 		}
 	}
+
+	&__item-label {
+		flex: 1;
+	}
+
+	&__item-stat {
+		font-size: 1.4rem;
+		color: var(--clr-shade-600);
+	}
+
 
 	&__items-header {
 		font-size: 1.3rem;
@@ -226,4 +200,78 @@
 		font-weight: 600;
 		color: var(--clr-primary-700);
 	}
+
+	/* Link items
+	/*--------------------------------------------------------------------------*/
+	&__item--link {
+		padding-left: 1.6rem;
+		padding-right: 1.6rem;
+		transition: background .3s ease;
+
+		&:hover {
+			background-color: var(--clr-primary-200);
+		}
+	}
+
+	&__item-link-label {
+		display: block;
+		color: var(--clr-primary-700);
+		border-bottom: .1rem solid var(--clr-primary-200);
+		padding: 1.2rem 2.4rem 1.1rem .5rem;
+		background: url(../img/caret-right.svg) no-repeat right center;
+		text-decoration: none;
+	}
+
+	/* Link thumb
+	/*--------------------------------------------------------------------------*/
+	&__item--link-thumb {
+		padding-left: 1.4rem;
+		padding-right: 1.4rem;
+		display: flex;
+		align-items: center;
+		transition: background .3s ease;
+
+		&:hover {
+			background: var(--clr-primary-200);
+		}
+	}
+
+	&__item-thumb {
+		width: 4.2rem;
+		border-radius: .6rem;
+		margin-right: 1rem;
+		margin-top: 1.2rem;
+		margin-bottom: 1.2rem;
+	}
+
+	&__item-link-label {
+		flex: 1;
+	}
+}
+
+/* Nav Advert holder
+/*--------------------------------------------------------------------------*/
+.nav-advert {
+	background: #fff;
+	border-radius: 1.2rem;
+	overflow: hidden;
+	box-shadow: 0 .1rem .4rem rgba(var(--clr-primary-800-rgb),.11);
+	padding: 2.4rem 2.5rem;
+	display: flex;
+	justify-content: center;
+}
+
+.advert-holder {
+	pointer-events: none;
+	width: 25rem;
+	height: 25rem;
+	font-size: 2.4rem;
+	font-weight: 700;
+	color: var(--clr-primary-600);
+	display: flex;
+	flex: 0 0 25rem;
+	justify-content: center;
+	align-items: center;
+	background: var(--clr-primary-200);
+	border-radius: .4rem;
 }

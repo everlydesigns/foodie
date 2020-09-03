@@ -31,6 +31,8 @@
 		overflow-y: auto;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
+		display: flex;
+		flex-direction: column;
 	}
 
 	/* Nav footer
@@ -83,12 +85,7 @@
 /* Nav sections
 /*--------------------------------------------------------------------------*/
 .nav-sections {
-	min-height: 100%;
-	margin-bottom: -17.3rem; // footer height
-
-	.footer-offset {
-		height: 17.3rem;
-	}
+	flex: 1; // footer at the bottom
 }
 
 .nav-section {

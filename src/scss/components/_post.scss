@@ -1,0 +1,148 @@
+/*==========================================================================*/
+/* Post main
+/*==========================================================================*/
+.post-main {
+	&__wrap {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+/*==========================================================================*/
+/* Post
+/*==========================================================================*/
+.post {
+
+	/* Post head
+	/*--------------------------------------------------------------------------*/
+	&__head {
+		margin-bottom: 1.7rem;
+	}
+	&__label {
+		display: inline-block;
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		padding: .3rem 1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		color: var(--clr-primary-600);
+		background: var(--clr-primary-200);
+		border-radius: .6rem;
+	}
+	&__headline {
+		font-size: 2.4rem;
+		line-height: 3.3rem;
+		font-weight: 700;
+		color: var(--clr-secondary-400);
+	}
+
+	/* Post statistics
+	/*--------------------------------------------------------------------------*/
+	&__stats {
+		position: relative;
+		padding-top: 1.4rem;
+		padding-bottom: 1.2rem;
+		display: flex;
+
+		&:before {
+			content: "";
+			height: .2rem;
+			background: var(--clr-primary-200);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			border-radius: .1rem;
+		}
+	}
+	&__stat-item {
+		font-size: 1.2rem;
+		line-height: 1.8rem;
+		font-weight: 500;
+		margin-right: 1.5rem;
+		color: var(--clr-secondary-200);
+		display: flex;
+		align-items: center;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	&__stat-icon {
+		width: 2rem;
+		height: 2rem;
+		margin-right: .8rem;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	// statistic specific styling
+	&__stat {
+		&--difficulty {
+			.post__stat-icon {
+				background-image: url("/dist/img/icon-chef-hat.svg");
+			}
+		}
+		&--servings {
+			.post__stat-icon {
+				background-image: url("/dist/img/icon-pie.svg");
+			}
+		}
+		&--prep-time {
+			.post__stat-icon {
+				background-image: url("/dist/img/icon-clock.svg");
+			}
+
+			&__label-long {
+				display: none;
+			}
+		}
+	}
+
+	/* Post content
+	/*--------------------------------------------------------------------------*/
+	&__content {
+		color: var(--clr-shade-600);
+		font-size: 1.4rem;
+		line-height: 2.4rem;
+		font-weight: 500;
+
+		p {
+			margin-top: 0;
+			margin-bottom: 1.2rem;
+
+			&:first-child {
+				font-size: 1.8rem;
+				line-height: 3rem;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+/*==========================================================================*/
+/* Post Gallery
+/*==========================================================================*/
+.post-main {
+	&__gallery {
+		display: none; // TEMP
+
+
+		background: red;
+		padding-top: 1.2rem;
+		padding-bottom: 1.2rem;
+		overflow: hidden;
+	}
+	&__gallery-wrap {
+		background: blue;
+		margin: 0 2rem;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+	&__gallery-item {
+		display: block;
+		height: 22.2rem;
+		width: 22.2rem;
+		flex-shrink: 0;
+		margin-right: 2rem;
+	}
+}

@@ -2,28 +2,29 @@
 /* Variables
 /*==========================================================================*/
 :root {
-
 	/* Colors
 	/*--------------------------------------------------------------------------*/
 	--clr-primary-800: #2F4545;
-	--clr-primary-800-rgb: 47, 69, 69;
 	--clr-primary-700: #1E6363;
-	--clr-primary-600-rgb: 122, 194, 194;
 	--clr-primary-600: #7AC2C2;
 	--clr-primary-400: #BBE8E8;
 	--clr-primary-200: #E4F6F5;
+	--clr-primary-800-rgb: 47, 69, 69;
+	--clr-primary-600-rgb: 122, 194, 194;
 
+	// Secondary
 	--clr-secondary-400: #272342;
+	--clr-secondary-200: #524F68;
 
+	// Shades
 	--clr-shade-600: #515A5A;
 	--clr-shade-400: #6D7878;
 	--clr-shade-300: #E7EDED;
 	--clr-shade-200: #8CA7A7;
-	--clr-shade-200-rgb: 228, 246, 245;
 	--clr-shade-100: #E5EBEB;
+	--clr-shade-200-rgb: 228, 246, 245;
 
-	--clr-background: #ffffff;
-
+	// A11y Outline Color
 	--outline-color: var(--clr-primary-600);
 
 	/* Font Family Set

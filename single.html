@@ -222,81 +222,220 @@
 		</div>
 	</div>
 
-	<!-- Main feed -->
-	<main class="main-feed">
-		<div class="row">
-			<article class="post-excerpt post-excerpt--large post-excerpt--left">
-				<div class="post-excerpt__thumb">
-					<div class="post-excerpt__thumb-wrap">
-						<a href="single.html">
-							<img src="dist/img/posts/post-1-320.jpg" alt="3 delicious smoothies with fruit" srcset="dist/img/posts/post-1-1520.jpg 1520w, dist/img/posts/post-1-420@2x.jpg 840w, dist/img/posts/post-1-420.jpg 420w, dist/img/posts/post-1-320@2x.jpg 640w, dist/img/posts/post-1-320.jpg 320w, dist/img/posts/post-1-260@2x.jpg 520w, dist/img/posts/post-1-260.jpg 260w" sizes="(min-width: 1640px) 420px, (min-width: 860px) 360px, (min-width: 740px) 320px, (min-width: 600px) calc(50vw - 70px), (min-width: 420px) 340px, calc(100vw - 80px)" class="post-excerpt__thumb-img">
-						</a>
-					</div>
+	<!-- Single Post Wrap (Article + Comments) -->
+	<main class="single-post-wrap">
+
+		<!-- Post main -->
+		<div class="post-main">
+
+			<!-- Post gallery -->
+			<div class="post-main__gallery">
+				<div class="post-main__gallery-wrap">
+					<img src="dist/img/gallery/gallery-1.jpg" alt="cake" class="post-main__gallery-item">
+					<img src="dist/img/gallery/gallery-2.jpg" alt="smoothie" class="post-main__gallery-item">
+					<img src="dist/img/gallery/gallery-3.jpg" alt="fruit bowl" class="post-main__gallery-item">
+					<img src="dist/img/gallery/gallery-4.jpg" alt="yoghurt bowl" class="post-main__gallery-item">
+					<img src="dist/img/gallery/gallery-5.jpg" alt="bowl of berries" class="post-main__gallery-item">
 				</div>
-				<div class="post-excerpt__body">
-					<span class="post-excerpt__label">Recipe idea</span>
+			</div>
 
-					<div class="post-excerpt__content-wrap">
-						<h2 class="post-excerpt__headline"><a href="single.html">Spice Up Your Summer Smoothies with a Dash of Fruit, Nuts and Seeds!</a></h2>
-						<div class="post-excerpt__excerpt-body">
-							<p class="post-excerpt__excerpt">We all know that smoothies can get really boring, really quickly. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis interdum est. Sed elit neque, aliquam id enim sed, mollis pharetr. Et magnis dis parturient montes nascetur ridiculus mus mauris vitae. Vestibulum morbi blandit cursus risus at ultrices mi tempus.</p>
-							<div class="post-excerpt__read-more-fade">
-								<a href="single.html" class="post-excerpt__read-more">
-									<span class="post-excerpt__read-more-long">Read more</span>
-									<span class="post-excerpt__read-more-short">More</span>
-									<span class="post-excerpt__read-more-guillemet">&raquo;</span>
-								</a>
+			<!-- Post content -->
+			<div class="post-main__wrap">
+				<article class="post post--recipe post--featured-gallery post--quick-easy">
+					<header class="post__head">
+						<span class="post__label">Quick & Easy</span>
+						<h2 class="post__headline">10 Ways to Add More Tasty Fruit to Your Every Day Diet</h2>
+						<section class="post__stats">
+							<div class="post__stat-item post__stat--difficulty">
+								<div class="post__stat-icon"></div>
+								<div class="post__stat-label">Medium</div>
+							</div>
+							<div class="post__stat-item post__stat--servings">
+								<div class="post__stat-icon"></div>
+								<div class="post__stat-label">6 servings</div>
+							</div>
+							<div class="post__stat-item post__stat--prep-time">
+								<div class="post__stat-icon"></div>
+								<div class="post__stat-label">1 hour 10 m.</div>
+							</div>
+						</section>
+					</header>
+
+					<!-- Recipe description -->
+					<div class="post__content">
+						<p>My favorite fruit salad! Perfectly right and refreshing with a beautiful combination of colors. This is the perfect summer side dish for cookouts or holiday parties that you can easily customize!</p>
+						<p>Tortor purus nisl pulvinar egestas mattis. Volutpat feugiat odio ut volutpat nisl ultrices pulvinar. Mollis neque vitae dignissim viverra id eu pellentesque. Eget porttitor ut senectus nisl placerat fermentum consectetur.</p>
+
+						<!-- Recipe instructions -->
+						<div class="post-recipe__instructions">
+
+							<!-- Ingredients -->
+							<section class="post-recipe__ingredients-section">
+								<h2 class="post-recipe__title">Ingredients</h2>
+								<ul class="post-recipe__ingredients-list">
+									<li class="post-recipe__ingredient-item">
+										<span class="post-recipe__ingredient-quantity">1 lb</span>
+										<span class="post-recipe__ingredient">fresh strawberries,</span>
+										<span class="post-recipe__ingredient-prep">chopped</span>
+									</li>
+									<li class="post-recipe__ingredient-item">
+										<span class="post-recipe__ingredient-quantity">1 lb</span>
+										<span class="post-recipe__ingredient">fresh pineapple,</span>
+										<span class="post-recipe__ingredient-prep">chopped</span>
+									</li>
+									<li class="post-recipe__ingredient-item">
+										<span class="post-recipe__ingredient-quantity">12 oz</span>
+										<span class="post-recipe__ingredient">fresh blueberries</span>
+									</li>
+
+									<li class="post-recipe__ingredient-separator">Honey lime dressing</li>
+
+									<li class="post-recipe__ingredient-item">
+										<span class="post-recipe__ingredient-quantity">&frac14; cup</span>
+										<span class="post-recipe__ingredient">honey</span>
+									</li>
+
+									<li class="post-recipe__ingredient-item">
+										<span class="post-recipe__ingredient-quantity">2 tsp</span>
+										<span class="post-recipe__ingredient">lime zest</span>
+									</li>
+								</ul>
+							</section>
+
+							<!-- Directions -->
+							<section class="post-recipe__directions">
+								<h2 class="post-recipe__title">Directions</h2>
+								<ol class="post-recipe__directions-list">
+									<li class="post-recipe__direction-item">
+										<span class="post-recipe__direction-step">Heat the oven to 180°C / fan 170°C / gas 4. Line and butter 2 x 20 cm sandwich tins.</span>
+									</li>
+									<li class="post-recipe__direction-item">
+										<span class="post-recipe__direction-step">Put all cake ingredients into the food processor and whizz until smooth. If the mix is a little stiff, add 1-2 Tbsp. water and whizz again.</span>
+									</li>
+								</ol>
+							</section>
+
+							<!-- Print & share buttons -->
+							<div class="post-recipe__print-share">
+								<button class="button button-secondary post-recipe__button">
+									<span class="button__icon button__icon--printer"></span>
+									<span class="button__label">Print</span>
+								</button>
+								<button class="button button-secondary post-recipe__button">
+									<span class="button__icon button__icon--share"></span>
+									<span class="button__label">Share</span>
+								</button>
 							</div>
 						</div>
+
+						<p>Mi et vivamus est sapien nisl. Accumsan risus, fusce in est, ipsum. Aliquam id eget quis morbi vitae nunc vitae amet. Amet vestibulum vehicula habitant scelerisque pulvinar volutpat molestie euismod id. Phasellus cras senectus tellus mattis urna!</p>
+						<p>Faucibus mattis tincidunt id sit. Neque risus consequat suspendisse bibendum aenean condimentum malesuada. Urna ultrices a, id morbi eu ac turpis. Adipiscing amet vitae libero at enim tellus. Proin tortor feugiat nulla ut non egestas. Porta pharetra proin urna, pellentesque purus cras convallis lacus.</p>
+						<p>Velit dui velit condimentum quis eget neque. Nullam non, sagittis lacus ut. Scelerisque libero ut amet scelerisque. Et faucibus consectetur diam sodales leo convallis. Gravida vitae sed mi nunc elementum est vitae sed. Suspendisse ac, egestas.</p>
 					</div>
 
-					<div class="post-excerpt__interaction-bar">
-						<div class="post-excerpt__interaction-primary">
-							<div class="post-excerpt__bookmark-wrap">
-								<button class="post-excerpt__bookmark-btn" title="Bookmark this post">
-									<img class="post-excerpt__bookmark-btn-icon svg-inject" src="dist/img/icon-bookmark.svg">
-									Bookmark this post
-								</button>
-								<span class="post-excerpt__bookmark-label screen-reader-text">Bookmark</span>
+					<!-- Post footer -->
+					<footer class="post__footer">
+						<!-- Recipe nutrition -->
+						<section class="post-recipe__nutrition">
+							<h2 class="post-recipe__nutrition-title">Nutrition: per serving</h2>
+							<ul class="post-recipe__nutrition-items">
+								<li class="post-recipe__nutrition-item">
+									<span class="post-recipe__nutrition-item-label">kcal</span>
+									<div class="post-recipe__nutrition-item-content">432</div>
+								</li>
+								<li class="post-recipe__nutrition-item">
+									<span class="post-recipe__nutrition-item-label">fat</span>
+									<div class="post-recipe__nutrition-item-content">21g</div>
+								</li>
+								<li class="post-recipe__nutrition-item">
+									<span class="post-recipe__nutrition-item-label">saturates</span>
+									<div class="post-recipe__nutrition-item-content">12g</div>
+								</li>
+							</ul>
+						</section>
+
+						<!-- Post likes and comments -->
+						<div class="post__likes-comments">
+							<div class="post__likes-wrap">
+								<div class="post__likes-avatars">
+									<img src="dist/img/users/user-2.jpg" alt="sample avatar">
+									<img src="dist/img/users/user-3.jpg" alt="sample avatar">
+									<img src="dist/img/users/user-4.jpg" alt="sample avatar">
+								</div>
+								<p class="post__likes-info">342 people liked this recipe</p>
 							</div>
 
-							<div class="post-excerpt__likes-wrap">
-								<button class="post-excerpt__like-btn" title="Like this post?">
-									<img class="post-excerpt__like-btn-icon svg-inject" src="dist/img/icon-heart.svg">
-									Like this post?
-								</button>
-								<span class="post-excerpt__likes-label">124 likes</span>
-							</div>
-
-							<div class="post-excerpt__likes-comments">
-								<button class="post-excerpt__comments-btn" title="Show all comments">
-									<img class="post-excerpt__comments-btn-icon svg-inject" src="dist/img/icon-chat.svg">
-									Show all comments
-								</button>
-								<span class="post-excerpt__comments-label">84 <span class="screen-reader-text">comments</span></span>
+							<div class="post__comments-wrap">
+								<button class="post__comments-icon"></button>
+								<p class="post__comments-info">82 comments</p>
 							</div>
 						</div>
-
-						<div class="post-excerpt__rating">
-							<span class="screen-reader-text">Rating: 4.8</span>
-							<div class="post-excerpt__rating-stars post-excerpt__rating-stars--4">
-								<div class="post-excerpt__rating-star"></div>
-								<div class="post-excerpt__rating-star"></div>
-								<div class="post-excerpt__rating-star"></div>
-								<div class="post-excerpt__rating-star"></div>
-								<div class="post-excerpt__rating-star"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</article>
-
-			<div class="main-feed__load-more">
-				<button class="main-feed__load-more-btn button button--secondary">Load more posts</button>
-				<span class="main-feed__load-more-end">You've reached the end of this list. <br>Thanks for scrolling!</span>
+					</footer>
+				</article>
 			</div>
 		</div>
+
+		<!-- Post sidebar -->
+		<aside class="post-sidebar">
+
+			<!-- User reviews widget -->
+			<section class="post-sidebar__widget-section">
+				<h2 class="post-sidebar__widget-title">User reviews 4.7 (34)</h2>
+
+				<article class="widget widget--user-reviews">
+					<div class="carousel">
+						<div class="carousel__items">
+							<div class="user-review">
+								<p class="user-review__quote">Tried this yesterday and I just can’t stress how tasty this is! Suspendisse. Aliquet vel nibh phasellus arcu. Ullamcorper consequat faucibus morbi.</p>
+								<div class="user-review__details">
+									<div class="user-review__author">
+										<img src="dist/img/users/user-4.jpg" alt="user rhastie123 avatar" class="user-review__author-avatar">
+										<span class="user-review__author-name">Roisin Hastie</span>
+									</div>
+									<div class="user-review__rating">5</div>
+								</div>
+							</div>
+
+							<div class="user-review">
+								<p class="user-review__quote">Plenty of fruit for anyone to enjoy, I’d just change the dressing slightly, it is too sour for my taste...</p>
+								<div class="user-review__details">
+									<div class="user-review__author">
+										<img src="dist/img/users/user-5.jpg" alt="user willf avatar" class="user-review__author-avatar">
+										<span class="user-review__author-name">William F.</span>
+									</div>
+									<div class="user-review__rating">4</div>
+								</div>
+							</div>
+						</div>
+						<div class="carousel__indicators">
+							<div class="carousel__indicator carousel__indicator--1"></div>
+							<div class="carousel__indicator carousel__indicator--2"></div>
+							<div class="carousel__indicator carousel__indicator--3"></div>
+							<div class="carousel__indicator carousel__indicator--4"></div>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<!-- Related recipes widget -->
+			<section class="post-sidebar__widget-section">
+				<h2 class="post-sidebar__widget-title">User reviews 4.7 (34)</h2>
+
+				<article class="widget widget--related-recipes">
+					<div class="post-excerpt-wrap" data-post-insert="{id: 4, id: 6}"></div>
+				</article>
+			</section>
+
+			<!-- Advertisement widget -->
+			<section class="post-sidebar__widget-section">
+				<article class="widget widget--advertisement">
+					<div class="advert-holder">Advertisement</div>
+				</article>
+			</section>
+		</aside>
 	</main>
+
+
 
 	<!-- Mobile footer -->
 	<footer class="footer">

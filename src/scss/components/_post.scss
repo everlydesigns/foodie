@@ -41,7 +41,7 @@
 	&__stats {
 		position: relative;
 		padding-top: 1.4rem;
-		padding-bottom: 1.2rem;
+		padding-bottom: .6rem;
 		display: flex;
 
 		&:before {
@@ -116,6 +116,116 @@
 				margin-bottom: 1rem;
 			}
 		}
+	}
+}
+
+
+/*==========================================================================*/
+/* Post Recipe
+/*==========================================================================*/
+.post-recipe {
+	&__instructions {
+		position: relative;
+		padding-top: 2.3rem;
+		padding-bottom: 2.6rem;
+		margin-bottom: 2.1rem;
+
+		// dividers
+		&:before, &:after {
+			content: "";
+			height: .2rem;
+			background: var(--clr-primary-200);
+			position: absolute;
+			left: 0;
+			right: 0;
+			border-radius: .1rem;
+		}
+		&:before {
+			top: 0;
+		}
+		&:after {
+			bottom: 0;
+		}
+	}
+	&__title {
+		font-size: 2rem;
+		line-height: 3.6rem;
+		margin-top: 0;
+		margin-bottom: .5rem;
+		color: var(--clr-secondary-400);
+	}
+
+	/* Ingredients
+	/*--------------------------------------------------------------------------*/
+	&__ingredients-section {
+		margin-bottom: 1.8rem;
+	}
+
+	&__ingredients-list {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		padding: 1.4rem 1.8rem;
+		background: var(--clr-primary-200);
+		border: .2rem solid var(--clr-primary-600);
+		border-radius: 1.2rem;
+	}
+
+	&__ingredient-item {
+		line-height: 1.8rem;
+		margin-bottom: .6rem;
+		color: var(--clr-secondary-300);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__ingredient {
+		font-weight: 600;
+	}
+	&__ingredient-prep {
+		color: var(--clr-shade-500);
+	}
+	&__ingredient-separator {
+		text-transform: uppercase;
+		font-weight: 600;
+		color: var(--clr-secondary-400);
+		padding-top: .6rem;
+		padding-bottom: .6rem;
+	}
+
+	/* Directions section
+	/*-------------------------------------------------------------------------*/
+	&__directions-section {
+		margin-bottom: 1.2rem;
+	}
+
+	&__directions-list {
+		padding: 0 0 0 .1rem;
+		margin: 0;
+		list-style-type: none;
+		counter-reset: directionNum;
+	}
+	&__direction-item {
+		counter-increment: directionNum;
+		margin-bottom: 1.8rem;
+
+		&:before {
+			content: "Step " counter(directionNum);
+			display: block;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: var(--clr-secondary-400);
+			margin-bottom: .6rem;
+		}
+	}
+
+	/* Recipe Print & Share Buttons
+	/*--------------------------------------------------------------------------*/
+	&__print-share {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 1rem;
 	}
 }
 

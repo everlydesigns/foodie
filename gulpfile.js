@@ -136,7 +136,7 @@ function watchFiles() {
 	watch('src/js/**/*.js', jsBabelMin)
 
 	// watch all img files
-	watch('src/img/*', imgOptimize)
+	watch('src/img/**/*', imgOptimize)
 }
 
 /*==========================================================================*/

@@ -117,11 +117,69 @@
 			}
 		}
 	}
+
+	/* Post insights area (likes & comments)
+	/*--------------------------------------------------------------------------*/
+	&__likes-comments {
+		background: var(--clr-primary-200);
+		border-radius: 1.2rem;
+		font-weight: 500;
+		font-size: 1.4rem;
+		line-height: 1.8rem;
+		padding: 1.3rem 0 1.5rem;
+		margin-bottom: 2.8rem;
+	}
+
+	// Likes
+	&__likes-wrap {
+		margin-bottom: 1.7rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__likes-avatars {
+		display: flex;
+		margin-right: 1.2rem;
+
+		img {
+			display: block;
+			border: .3rem solid white;
+			width: 3.4rem;
+			border-radius: 1.7rem;
+			background: white;
+			box-shadow: 0px 0px 0px 1px rgba(black, .03), inset 0px 0px 0px 4px rgba(black, .08);
+
+			&:nth-of-type(n+2) {
+				margin-left: -1.8rem;
+			}
+		}
+	}
+	&__likes-info {
+		margin: 0;
+	}
+
+	// Comments
+	&__comments-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__comments-icon {
+		border: 0;
+		background: var(--clr-secondary-400) url(/dist/img/icon-comments.svg) no-repeat center;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 1.5rem;
+		margin-right: 1.2rem;
+	}
+	&__comments-info {
+		margin: 0;
+	}
 }
 
 
 /*==========================================================================*/
-/* Post Recipe
+/* Post Recipe specific
 /*==========================================================================*/
 .post-recipe {
 	// Post recipe section
@@ -234,7 +292,7 @@
 	/*--------------------------------------------------------------------------*/
 	&__nutrition {
 		padding-top: 2.4rem;
-		margin-bottom: 1.8rem;
+		margin-bottom: 1.2rem;
 		position: relative;
 
 		&:before {
@@ -264,13 +322,6 @@
 		-webkit-overflow-scrolling: touch;
 		scroll-snap-type: x mandatory;
 		white-space: nowrap;
-
-		&:after {
-			content: "";
-			display: block;
-			width: 2rem;
-			height: 2rem;
-		}
 	}
 	&__nutrition-items-wrap {
 		position: relative;

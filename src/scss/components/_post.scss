@@ -412,6 +412,21 @@
 		margin-top: 0;
 		margin-bottom: 1.3rem;
 	}
+
+	&__section--advertisement {
+
+		.advert-holder {
+			width: 100%;
+			max-width: 30rem;
+			height: 20rem;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 1.2rem;
+		}
+	}
 }
 
 /*==========================================================================*/

@@ -145,6 +145,7 @@
 			display: block;
 			border: .3rem solid white;
 			width: 3.4rem;
+			height: 3.4rem;
 			border-radius: 1.7rem;
 			background: white;
 			box-shadow: 0px 0px 0px 1px rgba(black, .03), inset 0px 0px 0px 4px rgba(black, .08);
@@ -292,7 +293,6 @@
 	/*--------------------------------------------------------------------------*/
 	&__nutrition {
 		padding-top: 2.4rem;
-		margin-bottom: 1.2rem;
 		position: relative;
 
 		&:before {
@@ -318,10 +318,13 @@
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
+		padding-bottom: 1.2rem;
 		overflow-x: scroll;
 		-webkit-overflow-scrolling: touch;
 		scroll-snap-type: x mandatory;
 		white-space: nowrap;
+
+		font-size: 0;
 	}
 	&__nutrition-items-wrap {
 		position: relative;
@@ -354,9 +357,10 @@
 		width: 6.6rem;
 		margin-right: .6rem;
 		scroll-snap-align: start;
+		font-size: 0;
 
 		&:last-of-type {
-			margin-right: 3rem;
+			margin-right: 7.2rem;
 		}
 	}
 	&__nutrition-item-label {
@@ -387,6 +391,26 @@
 		font-weight: 600;
 		color: var(--clr-secondary-400);
 		padding: .5rem 0;
+	}
+}
+
+/*==========================================================================*/
+/* Post Sidebar
+/*==========================================================================*/
+.post-sidebar {
+	&__section {
+		margin-bottom: 2.4rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	&__section-title {
+		font-size: 2rem;
+		line-height: 2.4rem;
+		font-weight: 700;
+		color: var(--clr-secondary-400);
+		margin-top: 0;
+		margin-bottom: 1.3rem;
 	}
 }
 

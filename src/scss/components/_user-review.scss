@@ -1,0 +1,65 @@
+/*==========================================================================*/
+/* User review
+/*==========================================================================*/
+.user-review {
+	background: white;
+	border: .2rem solid var(--clr-primary-600);
+	border-radius: 1.2rem;
+	box-shadow: 0 .4rem .8rem rgba(var(--clr-primary-600-rgb), .17);
+
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-weight: 500;
+	padding: 1.7rem 1.9rem 1.5rem 3.7rem;
+
+	&__quote {
+		margin: 0;
+		color: var(--clr-secondary-400);
+		margin-bottom: 1.2rem;
+		position: relative;
+
+		&:before {
+			content: "\201c";
+			font-size: 2.4rem;
+			line-height: 2.4rem;
+			position: absolute;
+			top: .3rem;
+			left: -1.9rem;
+			color: var(--clr-primary-600);
+		}
+	}
+
+	&__details {
+		display: flex;
+		color: var(--clr-shade-600);
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		flex: 1;
+	}
+	&__author-avatar {
+		display: block;
+		width: 1.8rem;
+		height: 1.8rem;
+		border-radius: .9rem;
+		margin-right: .9rem;
+	}
+
+	&__rating {
+		display: flex;
+		align-items: center;
+
+		&:after {
+			content: "";
+			width: 1.5rem;
+			height: 1.5rem;
+			display: block;
+			background: url(/dist/img/star.svg) no-repeat center;
+			margin-left: .7rem;
+			position: relative;
+			top: -.1rem;
+		}
+	}
+}

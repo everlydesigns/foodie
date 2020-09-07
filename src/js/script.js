@@ -285,8 +285,12 @@ function postExptInit() {
 /*==========================================================================*/
 function singleScriptsInit() {
 	if ( !document.body.classList.contains('is-single') ) return;
+
+	// intialize single scripts
 	reviewSliderInit();
 	nutritionInfoInit();
+	postGalleryInit();
+
 } singleScriptsInit();
 
 /* Review Section Slider
@@ -318,5 +322,18 @@ function nutritionInfoInit() {
 		grabCursor: true,
 		slideClass: 'post-recipe__nutrition-item',
 		wrapperClass: 'post-recipe__nutrition-items'
+	});
+}
+
+/* Post Gallery
+/*--------------------------------------------------------------------------*/
+function postGalleryInit() {
+	// Initialize swiper.js
+	const postGallerySlider = new Swiper('.post-gallery__wrap', {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		grabCursor: true,
+		slideClass: 'post-gallery__item-wrap',
+		wrapperClass: 'post-gallery__items'
 	});
 }

@@ -42,7 +42,7 @@ function jsBabelMin() {
 /* Optimize graphics
 /*--------------------------------------------------------------------------*/
 function imgOptimize() {
-	return src(['src/img/**/*', '!src/img/posts/*'])
+	return src(['src/img/**/*', '!src/img/posts/*', '!src/img/gallery/*'])
 		.pipe(image())
 		.pipe(dest('./dist/img'))
 }
@@ -50,80 +50,151 @@ function imgOptimize() {
 /* Generate thumbnails
 /*--------------------------------------------------------------------------*/
 function generateThumbnails() {
-	// Resize and optimize post media
-	let optimizePosts1 = src('src/img/posts/*')
-		.pipe(resize({
-			width: 1520 // max width 1520px
-		}))
-		.pipe(image())
-		.pipe(rename({suffix: '-1520' }))
-		.pipe(dest('./dist/img/posts'))
+	// Set path
+	const srcPath = 'src/img/posts/*';
+	const destPath = srcPath.replace('src', 'dist').slice(0,-1);
 
-	// max width 380px + retina
-	let optimizePosts2 = src('src/img/posts/*')
-		.pipe(resize({
-			width: (420 * 2)
-		}))
-		.pipe(image())
-		.pipe(rename({suffix: '-420@2x' }))
-		.pipe(dest('./dist/img/posts'))
-		.pipe(resize({
-			width: '50%'
-		}))
-		.pipe(image())
-		.pipe(rename(path => ({
-			dirname: path.dirname,
-			basename: path.basename.replace('@2x', ''),
-			extname: path.extname,
-		})))
-		.pipe(dest('./dist/img/posts'))
+	// Set sizes
+	const imageSizes = [{
+		width: 1520,
+		retina: false,
+	}, 420, 320, 260];
 
-	// max width 320px + retina
-	let optimizePosts3 = src('src/img/posts/*')
-		.pipe(resize({
-			width: (320 * 2)
-		}))
-		.pipe(image())
-		.pipe(rename({suffix: '-320@2x' }))
-		.pipe(dest('./dist/img/posts'))
-		.pipe(resize({
-			width: '50%'
-		}))
-		.pipe(image())
-		.pipe(rename(path => ({
-			dirname: path.dirname,
-			basename: path.basename.replace('@2x', ''),
-			extname: path.extname,
-		})))
-		.pipe(dest('./dist/img/posts'))
+	// create array with gulp streams
+	const gulpStreams = [];
 
-	// max width 260px + retina
-	let optimizePosts4 = src('src/img/posts/*')
-		.pipe(resize({
-			width: (260 * 2)
-		}))
-		.pipe(image())
-		.pipe(rename({suffix: '-260@2x' }))
-		.pipe(dest('./dist/img/posts'))
-		.pipe(resize({
-			width: '50%'
-		}))
-		.pipe(image())
-		.pipe(rename(path => ({
-			dirname: path.dirname,
-			basename: path.basename.replace('@2x', ''),
-			extname: path.extname,
-		})))
-		.pipe(dest('./dist/img/posts'))
+	// Resize images
+	imageSizes.forEach((sizeInfo, i) => {
+		const resizeObj = {};
+		let isRetina = true;
+		let sizeSuffix;
+		let imageBreadth;
 
-	// merge all actions
-	return merge(
-		optimizePosts1,
-		optimizePosts2,
-		optimizePosts3,
-		optimizePosts4
-	);
+		// get resize object and size suffix
+		if ( typeof sizeInfo == 'object' ) {
+			// determine image breadth & resize obj
+			if ( 'width' in sizeInfo ) {
+				imageBreadth = sizeInfo.width;
+				resizeObj.width = imageBreadth;
+			}
+			if ( 'height' in sizeInfo ) {
+				imageBreadth = sizeInfo.height;
+				resizeObj.height = imageBreadth;
+			}
+
+			// check for retina
+			if ( 'retina' in sizeInfo ) {
+				isRetina = sizeInfo.retina;
+			}
+		} else {
+			imageBreadth = sizeInfo;
+			resizeObj.width = imageBreadth;
+			if ( isRetina ) resizeObj.width = imageBreadth * 2;
+		}
+
+		// set suffix
+		sizeSuffix = '-'+imageBreadth;
+		if ( isRetina ) sizeSuffix += '@2x';
+
+		// stream to resize, optimize and rename image
+		gulpStreams[i] = src(srcPath)
+			.pipe(resize(resizeObj))
+			.pipe(image())
+			.pipe(rename({suffix: sizeSuffix}))
+			.pipe(dest(destPath));
+
+		// additional retina stuff
+		if ( isRetina ) {
+			gulpStreams[i]
+				.pipe(resize({ width: '50%' }))
+				.pipe(image())
+				.pipe(rename(path => ({
+					dirname: path.dirname,
+					basename: path.basename.replace('@2x', ''),
+					extname: path.extname,
+				})))
+				.pipe(dest(destPath));
+		}
+	});
+
+	// merge streams
+	return merge(...[gulpStreams]);
 }
+
+/* Generate gallery thubmnails
+/*--------------------------------------------------------------------------*/
+function generateGalleryThumbs() {
+	// Set path
+	const srcPath = 'src/img/gallery/*';
+	const destPath = srcPath.replace('src', 'dist').slice(0,-1);
+
+	// Set sizes
+	const imageSizes = [{
+		width: 1280,
+		retina: false,
+	}, 250, 180];
+
+	// create array with gulp streams
+	const gulpStreams = [];
+
+	// Resize images
+	imageSizes.forEach((sizeInfo, i) => {
+		const resizeObj = {};
+		let isRetina = true;
+		let sizeSuffix;
+		let imageBreadth;
+
+		// get resize object and size suffix
+		if ( typeof sizeInfo == 'object' ) {
+			// determine image breadth & resize obj
+			if ( 'width' in sizeInfo ) {
+				imageBreadth = sizeInfo.width;
+				resizeObj.width = imageBreadth;
+			}
+			if ( 'height' in sizeInfo ) {
+				imageBreadth = sizeInfo.height;
+				resizeObj.height = imageBreadth;
+			}
+
+			// check for retina
+			if ( 'retina' in sizeInfo ) {
+				isRetina = sizeInfo.retina;
+			}
+		} else {
+			imageBreadth = sizeInfo;
+			resizeObj.width = imageBreadth;
+			if ( isRetina ) resizeObj.width = imageBreadth * 2;
+		}
+
+		// set suffix
+		sizeSuffix = '-'+imageBreadth;
+		if ( isRetina ) sizeSuffix += '@2x';
+
+		// stream to resize, optimize and rename image
+		gulpStreams[i] = src(srcPath)
+			.pipe(resize(resizeObj))
+			.pipe(image())
+			.pipe(rename({suffix: sizeSuffix}))
+			.pipe(dest(destPath));
+
+		// additional retina stuff
+		if ( isRetina ) {
+			gulpStreams[i]
+				.pipe(resize({ width: '50%' }))
+				.pipe(image())
+				.pipe(rename(path => ({
+					dirname: path.dirname,
+					basename: path.basename.replace('@2x', ''),
+					extname: path.extname,
+				})))
+				.pipe(dest(destPath));
+		}
+	});
+
+	// merge streams
+	return merge(...[gulpStreams]);
+}
+
 
 /*==========================================================================*/
 /* Watch Files
@@ -156,6 +227,9 @@ task('js', jsBabelMin)
 /*--------------------------------------------------------------------------*/
 task('img', imgOptimize)
 
-/* Generate Thumbnails Task
+/* Generate Post Thumbnails Task
 /*--------------------------------------------------------------------------*/
-task('thumbnails', generateThumbnails)
+task('post-thumbs', generateThumbnails)
+
+// Generate gallery thumbnails
+task('gallery-thumbs', generateGalleryThumbs)

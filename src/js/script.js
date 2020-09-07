@@ -1,7 +1,72 @@
 /*==========================================================================*/
-/* Home
+/* Global Scripts
 /*==========================================================================*/
 
+/* Initialize header and nav functionality
+/*--------------------------------------------------------------------------*/
+function headerNavInit() {
+
+	function disableScroll() {
+		window.scrollTo(0, 0);
+		// console.log('hi');
+	}
+	const toggleScroll = () => {
+		document.body.classList.toggle('nav-opened');
+	}
+
+	// toggle navigation panel
+	const toggleMenu = () => {
+		const headerEl = document.querySelector('.header');
+
+		// toggle button class
+		headerEl.classList.toggle('header--opened');
+
+		// toggle scrolling ability
+		toggleScroll();
+	}
+	// click event for menu toggle
+	document.querySelector('.header__menu-toggle').addEventListener('click', () => {
+		toggleMenu();
+	});
+
+	document.querySelector('.nav-panel').addEventListener('click', function(e) {
+		if ( e.target.classList.contains('nav-panel') ) {
+			toggleMenu();
+		}
+	});
+
+	// click event for navigation checkboxes
+	document.querySelectorAll('.nav-links__item--checkbox').forEach((checkboxItem) => {
+		checkboxItem.addEventListener('click', function(e) {
+			this.querySelector('.nav-links__item-checkbox').classList.toggle('checked');
+		})
+	});
+} headerNavInit();
+
+/* Search bar submit
+/*--------------------------------------------------------------------------*/
+function searchBarInit() {
+
+	// handle all search forms
+	let searchForms = document.forms;
+	for (let i = 0; i < searchForms.length; i++) {
+		searchForms[i].addEventListener('submit', e => {
+			e.preventDefault();
+
+			location.reload();
+		})
+	}
+} searchBarInit();
+
+
+/*==========================================================================*/
+/* Home Scripts
+/*==========================================================================*/
+function homeScriptsInit() {
+	if ( !document.body.classList.contains('is-home') ) return;
+	mainFeedPostsInit();
+	postExptInit();
+} homeScriptsInit();
 
 /* Initialize main feed
 /*--------------------------------------------------------------------------*/
@@ -185,7 +250,7 @@ function mainFeedPostsInit() {
 			}
 		}, 400 + (Math.random() * 3 * 200));
 	})
-} mainFeedPostsInit();
+}
 
 
 /* Posts excerpt interaction init
@@ -212,69 +277,46 @@ function postExptInit() {
 		}
 	})
 
-} postExptInit();
+}
 
-/* Initialize header and nav functionality
+
+/*==========================================================================*/
+/* Single scripts
+/*==========================================================================*/
+function singleScriptsInit() {
+	if ( !document.body.classList.contains('is-single') ) return;
+	reviewSliderInit();
+	nutritionInfoInit();
+} singleScriptsInit();
+
+/* Review Section Slider
 /*--------------------------------------------------------------------------*/
-function headerNavInit() {
-
-	function disableScroll() {
-		window.scrollTo(0, 0);
-		// console.log('hi');
-	}
-	const toggleScroll = () => {
-		document.body.classList.toggle('nav-opened');
-	}
-
-	// toggle navigation panel
-	const toggleMenu = () => {
-		const headerEl = document.querySelector('.header');
-
-		// toggle button class
-		headerEl.classList.toggle('header--opened');
-
-		// toggle scrolling ability
-		toggleScroll();
-
-		// enable or disable scroll depending on the menu state
-		/*if ( headerEl.classList.contains('header--opened') ) {
-			window.addEventListener('scroll', disableScroll);
-		} else {
-			window.removeEventListener('scroll', disableScroll);
-		}*/
-	}
-	// click event for menu toggle
-	document.querySelector('.header__menu-toggle').addEventListener('click', () => {
-		toggleMenu();
+function reviewSliderInit() {
+	// Initialize swiper.js
+	const reviewSlider = new Swiper('.carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		grabCursor: true,
+		slideClass: 'user-review',
+		wrapperClass: 'carousel__items',
+		pagination: {
+			el: '.carousel__indicators',
+			bulletClass: 'carousel__indicator',
+			bulletActiveClass: 'carousel__indicator--active',
+			clickable: true
+		},
 	});
+}
 
-	document.querySelector('.nav-panel').addEventListener('click', function(e) {
-		if ( e.target.classList.contains('nav-panel') ) {
-			toggleMenu();
-		}
-	});
-
-	// click event for navigation checkboxes
-	document.querySelectorAll('.nav-links__item--checkbox').forEach((checkboxItem) => {
-		checkboxItem.addEventListener('click', function(e) {
-			this.querySelector('.nav-links__item-checkbox').classList.toggle('checked');
-		})
-	});
-
-} headerNavInit();
-
-
-/* Search bar submit
+/* Nutrition Information Slider
 /*--------------------------------------------------------------------------*/
-function searchBarInit() {
-
-	// handle all search forms
-	let searchForms = document.forms;
-	for (let i = 0; i < searchForms.length; i++) {
-		searchForms[i].addEventListener('submit', e => {
-			e.preventDefault();
-
-			location.reload();
-		})
-	}
-} searchBarInit();
+function nutritionInfoInit() {
+	// Initialize swiper.js
+	const nutritionSlider = new Swiper('.post-recipe__nutrition-items-wrap', {
+		slidesPerView: 'auto',
+		spaceBetween: 6,
+		grabCursor: true,
+		slideClass: 'post-recipe__nutrition-item',
+		wrapperClass: 'post-recipe__nutrition-items'
+	});
+}

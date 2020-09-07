@@ -319,15 +319,13 @@
 		padding: 0;
 		margin: 0;
 		padding-bottom: 1.2rem;
-		overflow-x: scroll;
-		-webkit-overflow-scrolling: touch;
-		scroll-snap-type: x mandatory;
+		display: flex;
 		white-space: nowrap;
-
 		font-size: 0;
 	}
 	&__nutrition-items-wrap {
 		position: relative;
+		overflow: hidden;
 
 		// list fade
 		&:before {
@@ -335,7 +333,7 @@
 			display: block;
 			position: absolute;
 			top: 0;
-			right: 0;
+			right: -.1rem;
 			bottom: 0;
 			width: 4rem;
 			background:
@@ -349,15 +347,12 @@
 	}
 
 	&__nutrition-item {
-		display: inline-block;
+		display: block;
 		background: var(--clr-primary-200);
 		border-radius: .8rem;
 		text-align: center;
 		padding: .3rem 0 .7rem;
-		width: 6.6rem;
-		margin-right: .6rem;
-		scroll-snap-align: start;
-		font-size: 0;
+		flex: 0 0 6.6rem;
 
 		&:last-of-type {
 			margin-right: 7.2rem;
@@ -402,6 +397,26 @@
 		margin-bottom: 2.4rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
+		position: relative;
+
+		// section divider
+		&:after {
+			content: "";
+			display: block;
+			background: var(--clr-primary-200);
+			position: absolute;
+			left: 2rem;
+			right: 2rem;
+			bottom: 0;
+			height: .2rem;
+			border-radius: .1rem;
+		}
+
+		&:last-of-type {
+			&:after {
+				content: none;
+			}
+		}
 	}
 
 	&__section-title {
@@ -413,8 +428,50 @@
 		margin-bottom: 1.3rem;
 	}
 
-	&__section--advertisement {
+	// User reviews section
+	&__section--user-reviews {
+		overflow: hidden;
 
+		// carousel styling
+		.carousel {
+			&__items {
+				display: flex;
+				align-items: flex-start;
+			}
+
+			// indicators
+			&__indicators {
+				display: grid;
+				grid-gap: .2rem;
+				grid-auto-columns: min-content;
+				grid-auto-flow: column;
+				justify-content: center;
+				padding: 1.8rem 0 2rem;
+			}
+			&__indicator {
+				display: block;
+				width: .6rem;
+				height: .6rem;
+				background: var(--clr-primary-600);
+				border: .1rem solid white;
+				border-radius: .3rem;
+
+				&--active {
+					border-width: 0;
+					background: var(--clr-secondary-400);
+					margin: 0 .1rem;
+				}
+			}
+		}
+
+		.user-review {
+			flex-shrink: 0;
+			width: calc(100% - 6rem);
+		}
+	}
+
+	// Advertisement section
+	&__section--advertisement {
 		.advert-holder {
 			width: 100%;
 			max-width: 30rem;
@@ -434,19 +491,18 @@
 /*==========================================================================*/
 .post-main {
 	&__gallery {
-		display: none; // TEMP
-
-
+		display: none;
 		background: red;
 		padding-top: 1.2rem;
 		padding-bottom: 1.2rem;
 		overflow: hidden;
+		margin-bottom: 1.2rem;
 	}
 	&__gallery-wrap {
 		background: blue;
-		margin: 0 2rem;
 		display: flex;
 		flex-wrap: nowrap;
+		overflow-x: scroll;
 	}
 	&__gallery-item {
 		display: block;
@@ -454,5 +510,9 @@
 		width: 22.2rem;
 		flex-shrink: 0;
 		margin-right: 2rem;
+
+		&:first-of-type {
+			margin-left: 2rem;
+		}
 	}
 }

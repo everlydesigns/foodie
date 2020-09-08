@@ -292,6 +292,12 @@ function postExptInit() {
 		if ( e.target.classList.contains('post-excerpt__like-btn') ) {
 			e.target.classList.toggle('checked');
 		}
+
+		// comments button
+		if ( e.target.classList.contains('post-excerpt__comments-btn') ) {
+			window.location.href = 'single.html#comments';
+		}
+
 		// rating functionality
 		if ( e.target.classList.contains('post-excerpt__rating-star') ) {
 			let setRating = [...e.target.parentElement.children].indexOf(e.target) + 1;
@@ -334,11 +340,13 @@ function reviewSliderInit() {
 			bulletActiveClass: 'carousel__indicator--active',
 			clickable: true
 		},
+		autoplay: {
+			delay: 10000,
+		},
 		breakpoints: {
 			// when window width is >= 620px
 			620: {
-				slidesPerView: 2,
-				spaceBetween: 20
+				slidesPerView: 2
 			},
 		}
 	});
@@ -401,12 +409,16 @@ function relatedPostsInit() {
 	postsWrap.append(...postsToInsert);
 
 	// intialize swiper.js
-	const postGallerySlider = new Swiper('.carousel', {
+	const relatedPostsSlider = new Swiper('.carousel--related-posts', {
 		slidesPerView: 'auto',
 		spaceBetween: 10,
 		grabCursor: true,
+		loop: true,
 		slideClass: 'post-excerpt',
 		wrapperClass: 'carousel__items',
+		autoplay: {
+			delay: 15000,
+		},
 		breakpoints: {
 			// when window width is >= 620px
 			620: {

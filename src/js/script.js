@@ -325,6 +325,7 @@ function reviewSliderInit() {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
 		grabCursor: true,
+		loop: true,
 		slideClass: 'user-review',
 		wrapperClass: 'carousel__items',
 		pagination: {
@@ -333,6 +334,13 @@ function reviewSliderInit() {
 			bulletActiveClass: 'carousel__indicator--active',
 			clickable: true
 		},
+		breakpoints: {
+			// when window width is >= 620px
+			620: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+		}
 	});
 }
 
@@ -398,6 +406,13 @@ function relatedPostsInit() {
 		spaceBetween: 10,
 		grabCursor: true,
 		slideClass: 'post-excerpt',
-		wrapperClass: 'carousel__items'
+		wrapperClass: 'carousel__items',
+		breakpoints: {
+			// when window width is >= 620px
+			620: {
+				slidesPerView: 2,
+				spaceBetween: 20
+			},
+		}
 	});
 }

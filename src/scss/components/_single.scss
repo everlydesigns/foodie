@@ -3,4 +3,12 @@
 /*==========================================================================*/
 .single-post-wrap {
 	padding-top: 3.6rem;
+
+	// Single Post Media Queries
+	@include breakpoint(lm) {
+		padding-top: 4.2rem;
+	}
+	@include breakpoint(t) {
+		padding-top: 5.4rem;
+	}
 }

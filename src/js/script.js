@@ -59,26 +59,9 @@ function searchBarInit() {
 } searchBarInit();
 
 
-/*==========================================================================*/
-/* Home Scripts
-/*==========================================================================*/
-function homeScriptsInit() {
-	if ( !document.body.classList.contains('is-home') ) return;
-	mainFeedPostsInit();
-	postExptInit();
-} homeScriptsInit();
-
-/* Initialize main feed
+/* Get posts
 /*--------------------------------------------------------------------------*/
-function mainFeedPostsInit() {
-	const postExcerptBase = document.querySelector('.post-excerpt');
-	const postFeed = document.querySelector('.main-feed .row');
-	const loadMoreWrap = document.querySelector('.main-feed__load-more');
-	const loadMoreBtn = document.querySelector('.main-feed__load-more-btn');
-	let largePostsCount = 1;
-	let insertedPosts = 0;
-
-	// all posts
+function getPosts() {
 	const posts = [
 		{
 			type: "large",
@@ -163,9 +146,69 @@ function mainFeedPostsInit() {
 		},
 	];
 
+	return posts;
+}
+
+/* Create post excerpt element
+/*--------------------------------------------------------------------------*/
+function createPostExcerptEl(post, postExcerptBase) {
+	if ( typeof post == 'undefined' ) return;
+
+	const newPostExcerpt = document.createElement('article');
+	newPostExcerpt.setAttribute('class', 'post-excerpt');
+
+	// insert base html
+	newPostExcerpt.innerHTML = postExcerptBase.innerHTML;
+
+	// insert alt tag
+	const postThumbImg = newPostExcerpt.querySelector('.post-excerpt__thumb-img');
+	postThumbImg.setAttribute('src', post.thumb + '-1520.jpg');
+	postThumbImg.setAttribute('alt', post.thumbAlt);
+
+	// update post body
+	newPostExcerpt.querySelector('.post-excerpt__label').innerText = post.label;
+	newPostExcerpt.querySelector('.post-excerpt__headline a').innerText = post.title;
+	newPostExcerpt.querySelector('.post-excerpt__excerpt').innerText = post.excerpt;
+
+	// update interaction
+	if ( !!newPostExcerpt.querySelector('.post-excerpt__interaction-bar')  ) {
+		newPostExcerpt.querySelector('.post-excerpt__likes-label').innerText = `${post.likes} ${( post.likes === 1 ? 'like' : 'likes' )}`;
+		newPostExcerpt.querySelector('.post-excerpt__comments-label').innerHTML = `${post.comments} <span class="screen-reader-text">${( post.comments === 1 ? 'comment' : 'comments' )}</span>`;
+
+		// rating
+		newPostExcerpt.querySelector('.post-excerpt__rating .screen-reader-text').innerText = "Rating: "+ post.rating;
+		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
+	}
+
+	// return semi-assembled element
+	return newPostExcerpt;
+}
+
+/*==========================================================================*/
+/* Home Scripts
+/*==========================================================================*/
+function homeScriptsInit() {
+	if ( !document.body.classList.contains('is-home') ) return;
+	mainFeedPostsInit();
+	postExptInit();
+} homeScriptsInit();
+
+/* Initialize main feed
+/*--------------------------------------------------------------------------*/
+function mainFeedPostsInit() {
+	const postExcerptBase = document.querySelector('.post-excerpt');
+	const postFeed = document.querySelector('.main-feed .row');
+	const loadMoreWrap = document.querySelector('.main-feed__load-more');
+	const loadMoreBtn = document.querySelector('.main-feed__load-more-btn');
+	let largePostsCount = 1;
+	let insertedPosts = 0;
+
+	// get posts
+	const posts = getPosts();
+
 	// given post object inserts said post to the feed
 	function insertPost(post) {
-		const newPostExcerpt = document.createElement('article');
+		const newPostExcerpt = createPostExcerptEl(post, postExcerptBase);
 		newPostExcerpt.setAttribute('class', `post-excerpt post-excerpt--${post.type}`);
 
 		// determine post position if large type
@@ -174,12 +217,9 @@ function mainFeedPostsInit() {
 			newPostExcerpt.classList.add('post-excerpt--' + ( largePostsCount % 2 === 0 ? 'right' : 'left' ));
 		}
 
-		// insert base html
-		newPostExcerpt.innerHTML = postExcerptBase.innerHTML;
-
 		// insert src & responsive images
 		const postThumbImg = newPostExcerpt.querySelector('.post-excerpt__thumb-img')
-		postThumbImg.setAttribute('src', post.thumb + '-1520.jpg'); // -320.jpg
+		postThumbImg.setAttribute('src', post.thumb + '-1520.jpg');
 		let postSrcSetArray = [
 			'1520 1520w',
 			'420@2x 840w',
@@ -199,22 +239,6 @@ function mainFeedPostsInit() {
 		if ( post.type == 'medium' ) {
 			postThumbImg.setAttribute('sizes', postThumbImg.getAttribute('sizes').substring(27));
 		}
-
-		// insert alt tag
-		postThumbImg.setAttribute('alt', post.thumbAlt);
-
-		// update post body
-		newPostExcerpt.querySelector('.post-excerpt__label').innerText = post.label;
-		newPostExcerpt.querySelector('.post-excerpt__headline a').innerText = post.title;
-		newPostExcerpt.querySelector('.post-excerpt__excerpt').innerText = post.excerpt;
-
-		// update interaction
-		newPostExcerpt.querySelector('.post-excerpt__likes-label').innerText = `${post.likes} ${( post.likes === 1 ? 'like' : 'likes' )}`;
-		newPostExcerpt.querySelector('.post-excerpt__comments-label').innerHTML = `${post.comments} <span class="screen-reader-text">${( post.comments === 1 ? 'comment' : 'comments' )}</span>`;
-
-		// rating
-		newPostExcerpt.querySelector('.post-excerpt__rating .screen-reader-text').innerText = "Rating: "+ post.rating;
-		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
 
 		// append to the feed
 		postFeed.insertBefore(newPostExcerpt, loadMoreWrap);
@@ -251,7 +275,6 @@ function mainFeedPostsInit() {
 		}, 400 + (Math.random() * 3 * 200));
 	})
 }
-
 
 /* Posts excerpt interaction init
 /*--------------------------------------------------------------------------*/
@@ -290,6 +313,7 @@ function singleScriptsInit() {
 	reviewSliderInit();
 	nutritionInfoInit();
 	postGalleryInit();
+	relatedPostsInit();
 
 } singleScriptsInit();
 
@@ -297,7 +321,7 @@ function singleScriptsInit() {
 /*--------------------------------------------------------------------------*/
 function reviewSliderInit() {
 	// Initialize swiper.js
-	const reviewSlider = new Swiper('.carousel', {
+	const reviewSlider = new Swiper('.post-sidebar__section--user-reviews .carousel', {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
 		grabCursor: true,
@@ -335,5 +359,45 @@ function postGalleryInit() {
 		grabCursor: true,
 		slideClass: 'post-gallery__item-wrap',
 		wrapperClass: 'post-gallery__items'
+	});
+}
+
+/* Related Posts section
+/*--------------------------------------------------------------------------*/
+function relatedPostsInit() {
+	const relatedRecipesSection = document.querySelector('.post-sidebar__section--related-recipes');
+	const postsHolder = relatedRecipesSection.querySelector('.post-excerpt__holder');
+	const postsWrap = relatedRecipesSection.querySelector('.carousel__items');
+
+	// get post data
+	const postInsertDataAttr = postsHolder.dataset.postInsert;
+	const postInsertData = JSON.parse(postInsertDataAttr);
+
+	// create elements from posts obj
+	const posts = getPosts();
+	const basePost = relatedRecipesSection.querySelector('.post-excerpt');
+	const postsToInsert = [];
+
+	postInsertData.forEach((insertData, i) => {
+		let postInsertId = insertData.id;
+		if ( typeof postInsertId == 'undefined' ) return;
+
+		const newPostExcerpt = createPostExcerptEl(posts[postInsertId], basePost);
+
+		// add to array to insert later
+		postsToInsert.push(newPostExcerpt);
+	});
+
+	// insert posts to DOM
+	postsHolder.remove();
+	postsWrap.append(...postsToInsert);
+
+	// intialize swiper.js
+	const postGallerySlider = new Swiper('.carousel', {
+		slidesPerView: 'auto',
+		spaceBetween: 10,
+		grabCursor: true,
+		slideClass: 'post-excerpt',
+		wrapperClass: 'carousel__items'
 	});
 }

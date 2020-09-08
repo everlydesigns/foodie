@@ -42,6 +42,7 @@
 		position: relative;
 		padding-top: 1.4rem;
 		padding-bottom: .6rem;
+		margin: 0;
 		display: flex;
 
 		&:before {
@@ -71,6 +72,10 @@
 	&__stat-icon {
 		width: 2rem;
 		height: 2rem;
+		overflow: hidden;
+		text-indent: 3rem;
+		white-space: nowrap;
+		color: transparent;
 		margin-right: .8rem;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -467,6 +472,84 @@
 		.user-review {
 			flex-shrink: 0;
 			width: calc(100% - 6rem);
+		}
+	}
+
+	// Related recipes
+	&__section--related-recipes {
+		overflow: hidden;
+
+		.carousel {
+			&__items {
+				display: flex;
+				align-items: flex-start;
+			}
+
+			// post excerpt specific styling for related recipes section
+			.post-excerpt {
+				flex-shrink: 0;
+				flex-basis: unquote("min(calc(100vw - 4rem - 3rem), 28rem)");
+				transition: box-shadow .3s ease;
+				box-shadow: 0 0 0 .1rem var(--clr-shade-300),inset 0 -.6rem 1rem rgba(var(--clr-shade-200-rgb),.06);
+
+				&.swiper-slide-active {
+					box-shadow: 0 0 0 .1rem var(--clr-shade-300),inset 0 -.6rem 1rem rgba(var(--clr-shade-200-rgb),.06),0 .5rem 1.2rem rgba(var(--clr-primary-800-rgb),.08);
+				}
+
+				&__thumb {
+					padding: 1rem 1rem 0;
+					margin-bottom: 1.4rem;
+				}
+				&__thumb-wrap {
+					border-radius: .4rem .4rem .2rem .2rem;
+				}
+
+				&__body {
+					position: relative;
+				}
+				&__label {
+					position: absolute;
+					top: -48px;
+					color: var(--clr-secondary-400);
+					background: white;
+					box-shadow: 0 0 0 .1rem rgba(black, .12);
+					font-weight: 700;
+				}
+
+				&__headline {
+					font-size: 1.8rem;
+					line-height: 2.4rem;
+				}
+				&__excerpt {
+					font-size: 1.2rem;
+					line-height: 1.8rem;
+					max-height: 4 * 1.8rem;
+				}
+				&__excerpt-body {
+					margin-bottom: 1.8rem;
+				}
+
+				&__read-more-fade {
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+				&__read-more {
+					font-size: 1rem;
+				}
+				&__read-more-short {
+					display: inline;
+				}
+				&__read-more-long {
+					display: none;
+				}
+				&__read-more-guillemet {
+					vertical-align: baseline;
+				}
+
+				&__interaction-bar {
+					display: none;
+				}
+			}
 		}
 	}
 

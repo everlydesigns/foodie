@@ -8,7 +8,7 @@ $breakpoints: (
 	tp: 53.75em, // tablet plus 860+
 	lt: 60em, // larger tablet, small desktop 960+
 	dp: 75em, // desktop 1200+
-	hd: 102.5em // huge desktop 1200+
+	hd: 102.5em // huge desktop 1640+
 );
 
 @mixin breakpoint($breakpoint) {

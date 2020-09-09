@@ -1,0 +1,28 @@
+/*==========================================================================*/
+/* Carousel
+/*==========================================================================*/
+.carousel {
+	// indicators
+	&__indicators {
+		display: grid;
+		grid-gap: .2rem;
+		grid-auto-columns: min-content;
+		grid-auto-flow: column;
+		justify-content: center;
+		padding: 1.8rem 0 2rem;
+	}
+	&__indicator {
+		display: block;
+		width: .6rem;
+		height: .6rem;
+		background: var(--clr-primary-600);
+		border: .1rem solid white;
+		border-radius: .3rem;
+
+		&--active {
+			border-width: 0;
+			background: var(--clr-secondary-400);
+			margin: 0 .1rem;
+		}
+	}
+}

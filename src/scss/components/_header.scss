@@ -318,53 +318,107 @@
 			}
 		}
 	}
-	@include breakpoint(dp) {
-		&__wrap {
-			box-shadow: none;
-		}
-
-		&__logo-background {
-			padding-left: 3.2rem;
-			padding-right: 3.2rem;
-			height: 10.8rem;
-		}
-		&__logo {
-			width: 13.2rem;
-		}
-
-		&__menu-toggle {
-			display: none;
-		}
-		&__nav-links {
-			display: block;
-			list-style-type: none;
-			display: flex;
-			padding-left: 1.2rem;
-		}
-		&__nav-link {
-			display: block;
-			padding: .9rem 1rem;
-			border-radius: 2.1rem;
-			text-decoration: none;
-			font-size: 1.6rem;
-			line-height: 2.4rem;
-			font-weight: 600;
-			text-transform: uppercase;
-			color: var(--clr-primary-200);
-
-			&--active {
-				background: var(--clr-primary-200);
-				color: var(--clr-secondary-400);
-				padding-left: 2rem;
-				padding-right: 2rem;
-				margin-right: 1rem;
-			}
-		}
-
-		.search-bar {
+	@at-root body.is-home .header {
+		@include breakpoint(dp) {
 			&__wrap {
-				width: 38rem;
+				box-shadow: none;
+			}
+
+			&__logo-background {
+				padding-left: 3.2rem;
+				padding-right: 3.2rem;
+				height: 10.8rem;
+			}
+			&__logo {
+				width: 13.2rem;
+			}
+
+			&__menu-toggle {
+				display: none;
+			}
+			&__nav-links {
+				display: block;
+				list-style-type: none;
+				display: flex;
+				padding-left: 1.2rem;
+			}
+			&__nav-link {
+				display: block;
+				padding: .9rem 1rem;
+				border-radius: 2.1rem;
+				text-decoration: none;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+				font-weight: 600;
+				text-transform: uppercase;
+				color: var(--clr-primary-200);
+
+				&--active {
+					background: var(--clr-primary-200);
+					color: var(--clr-secondary-400);
+					padding-left: 2rem;
+					padding-right: 2rem;
+					margin-right: 1rem;
+				}
+			}
+
+			.search-bar {
+				&__wrap {
+					width: 38rem;
+				}
 			}
 		}
 	}
+	@at-root body.is-single .header {
+		@media (min-width: 83.75em) {
+			&__wrap {
+				box-shadow: none;
+			}
+
+			&__logo-background {
+				padding-left: 3.2rem;
+				padding-right: 3.2rem;
+				height: 10.8rem;
+			}
+			&__logo {
+				width: 13.2rem;
+			}
+
+			&__menu-toggle {
+				display: none;
+			}
+			&__nav-links {
+				display: block;
+				list-style-type: none;
+				display: flex;
+				padding-left: 1.2rem;
+			}
+			&__nav-link {
+				display: block;
+				padding: .9rem 1rem;
+				border-radius: 2.1rem;
+				text-decoration: none;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+				font-weight: 600;
+				text-transform: uppercase;
+				color: var(--clr-primary-200);
+
+				&--active {
+					background: var(--clr-primary-200);
+					color: var(--clr-secondary-400);
+					padding-left: 2rem;
+					padding-right: 2rem;
+					margin-right: 1rem;
+				}
+			}
+
+			.search-bar {
+				&__wrap {
+					width: 38rem;
+				}
+			}
+		}
+	}
+
 }

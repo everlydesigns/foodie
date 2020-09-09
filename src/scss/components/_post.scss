@@ -16,6 +16,12 @@
 			margin-right: auto;
 		}
 	}
+	@include breakpoint(lt) {
+		&__wrap {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
 
 /*==========================================================================*/
@@ -557,13 +563,16 @@
 	}
 	// 620px+
 	@media (min-width: 38.75em) {
+		// disable swiper.js for nutrition items
 		&__nutrition-items-wrap {
+
 			&:before {
 				content: none;
 			}
 		}
 		&__nutrition-items {
 			transform: translate(0)!important; // block swiper.js
+
 		}
 		&__nutrition-item {
 			&:last-of-type {
@@ -616,35 +625,10 @@
 	&__section--user-reviews {
 		overflow: hidden;
 
-		// carousel styling
 		.carousel {
 			&__items {
 				display: flex;
 				align-items: flex-start;
-			}
-
-			// indicators
-			&__indicators {
-				display: grid;
-				grid-gap: .2rem;
-				grid-auto-columns: min-content;
-				grid-auto-flow: column;
-				justify-content: center;
-				padding: 1.8rem 0 2rem;
-			}
-			&__indicator {
-				display: block;
-				width: .6rem;
-				height: .6rem;
-				background: var(--clr-primary-600);
-				border: .1rem solid white;
-				border-radius: .3rem;
-
-				&--active {
-					border-width: 0;
-					background: var(--clr-secondary-400);
-					margin: 0 .1rem;
-				}
 			}
 		}
 
@@ -751,6 +735,13 @@
 				max-width: none;
 				height: 10rem;
 			}
+			@include breakpoint(lt) {
+				height: 28rem;
+
+				.advert-holder {
+					margin-bottom: 0;
+				}
+			}
 		}
 	}
 
@@ -788,6 +779,32 @@
 			}
 		}
 	}
+	@include breakpoint(lt) {
+		padding-top: 5.9rem;
+
+		&__wrap {
+			position: sticky;
+			top: 10.8rem;
+			padding-bottom: 4.5rem;
+		}
+
+		&__section {
+			padding-left: 0;
+			padding-right: 0;
+
+			&:after {
+				left: 0;
+				right: 0;
+			}
+		}
+
+		&__section--advertisement {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+
+		}
+	}
 }
 
 /*==========================================================================*/
@@ -804,7 +821,6 @@
 	&__items {
 		display: flex;
 	}
-
 	&__item-wrap {
 		display: block;
 		flex-shrink: 0;
@@ -826,7 +842,6 @@
 			border: .1rem solid rgba(black, .15);
 		}
 	}
-
 	&__item {
 		// size the elements based on viewport
 		--gallery-item-breadth: clamp(18rem, calc((100vw - 4rem) / 1.5), 25rem);
@@ -840,6 +855,24 @@
 	&__wrap:not(.swiper-container-initialized) {
 		.post-gallery__item-wrap {
 			margin-right: 2rem;
+		}
+	}
+
+
+	/* Post Gallery Media Queries
+	/*--------------------------------------------------------------------------*/
+	@include breakpoint(lt) {
+		&__wrap {
+			--post-gallery-pad: calc((100vw - 91rem) / 2);
+			padding-left: var(--post-gallery-pad);
+			padding-right: var(--post-gallery-pad);
+		}
+	}
+	@media (min-width: 83.75em) {
+		&__wrap {
+			--post-gallery-pad: calc((100vw - 91rem - 34rem) / 2);
+			padding-left: var(--post-gallery-pad);
+			padding-right: var(--post-gallery-pad);
 		}
 	}
 }

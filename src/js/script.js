@@ -8,6 +8,7 @@ function headerNavInit() {
 	const navPanelScrollWrap = document.querySelector('.nav-panel__wrap');
 	window.scrollLockEnabled = false;
 
+	// toggle scroll lock
 	window.toggleScroll = () => {
 		if ( typeof bodyScrollLock === 'undefined' ) return;
 
@@ -25,7 +26,11 @@ function headerNavInit() {
 	window.addEventListener('resize', (event) => {
 		const winWidth = window.innerWidth;
 
-		if ( winWidth >= 1200 ) {
+		// get nav breakpoint
+		let navBreakpoint = 1200;
+		if ( pageType == 'single' ) navBreakpoint = 1340;
+
+		if ( winWidth >= navBreakpoint ) {
 			if ( scrollLockEnabled ) {
 				bodyScrollLock.clearAllBodyScrollLocks();
 				toggleMenu();
@@ -212,6 +217,9 @@ function createPostExcerptEl(post, postExcerptBase) {
 /*==========================================================================*/
 function homeScriptsInit() {
 	if ( !document.body.classList.contains('is-home') ) return;
+	window.pageType = 'home';
+
+	// run home scripts
 	mainFeedPostsInit();
 	postExptInit();
 } homeScriptsInit();
@@ -337,6 +345,7 @@ function postExptInit() {
 /*==========================================================================*/
 function singleScriptsInit() {
 	if ( !document.body.classList.contains('is-single') ) return;
+	window.pageType = 'single';
 
 	// intialize single scripts
 	postReviewInit();
@@ -365,7 +374,7 @@ function postReviewInit() {
 /*--------------------------------------------------------------------------*/
 function reviewSliderInit() {
 	// Initialize swiper.js
-	const reviewSlider = new Swiper('.post-sidebar__section--user-reviews .carousel', {
+	const reviewSlider = new Swiper('.carousel--user-reviews', {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
 		grabCursor: true,
@@ -386,6 +395,10 @@ function reviewSliderInit() {
 			620: {
 				slidesPerView: 2
 			},
+			960: {
+				slidesPerView: 1,
+				spaceBetween: 10
+			},
 		}
 	});
 }
@@ -399,7 +412,12 @@ function nutritionInfoInit() {
 		spaceBetween: 6,
 		grabCursor: true,
 		slideClass: 'post-recipe__nutrition-item',
-		wrapperClass: 'post-recipe__nutrition-items'
+		wrapperClass: 'post-recipe__nutrition-items',
+		breakpoints: {
+			620: {
+				grabCursor: false,
+			}
+		}
 	});
 }
 
@@ -462,6 +480,10 @@ function relatedPostsInit() {
 			620: {
 				slidesPerView: 2,
 				spaceBetween: 20
+			},
+			960: {
+				slidesPerView: 1,
+				spaceBetween: 10
 			},
 		}
 	});

@@ -107,7 +107,6 @@ function generateThumbnails() {
 		if ( isRetina ) {
 			gulpStreams[i]
 				.pipe(resize({ width: '50%' }))
-				.pipe(image())
 				.pipe(rename(path => ({
 					dirname: path.dirname,
 					basename: path.basename.replace('@2x', ''),
@@ -181,7 +180,6 @@ function generateGalleryThumbs() {
 		if ( isRetina ) {
 			gulpStreams[i]
 				.pipe(resize({ width: '50%' }))
-				.pipe(image())
 				.pipe(rename(path => ({
 					dirname: path.dirname,
 					basename: path.basename.replace('@2x', ''),

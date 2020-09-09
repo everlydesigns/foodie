@@ -15,13 +15,6 @@
 	@at-root .header--opened ~ .nav-panel {
 		display: block;
 	}
-	@at-root body.nav-opened {
-		overflow: hidden;
-
-		@include breakpoint(dp) {
-			overflow: auto;
-		}
-	}
 
 	/* Alignment
 	/*--------------------------------------------------------------------------*/

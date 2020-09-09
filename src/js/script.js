@@ -5,17 +5,36 @@
 /* Initialize header and nav functionality
 /*--------------------------------------------------------------------------*/
 function headerNavInit() {
+	const navPanelScrollWrap = document.querySelector('.nav-panel__wrap');
+	window.scrollLockEnabled = false;
 
-	function disableScroll() {
-		window.scrollTo(0, 0);
-		// console.log('hi');
+	window.toggleScroll = () => {
+		if ( typeof bodyScrollLock === 'undefined' ) return;
+
+		if ( scrollLockEnabled ) {
+			bodyScrollLock.enableBodyScroll(navPanelScrollWrap);
+		} else {
+			bodyScrollLock.disableBodyScroll(navPanelScrollWrap);
+		}
+
+		// Update scroll lock var
+		scrollLockEnabled = !scrollLockEnabled;
 	}
-	const toggleScroll = () => {
-		document.body.classList.toggle('nav-opened');
-	}
+
+	// make scroll lock responsive
+	window.addEventListener('resize', (event) => {
+		const winWidth = window.innerWidth;
+		
+		if ( winWidth >= 1200 ) {
+			if ( scrollLockEnabled ) {
+				bodyScrollLock.clearAllBodyScrollLocks();
+				toggleMenu();
+			}
+		}
+	});
 
 	// toggle navigation panel
-	const toggleMenu = () => {
+	window.toggleMenu = () => {
 		const headerEl = document.querySelector('.header');
 
 		// toggle button class

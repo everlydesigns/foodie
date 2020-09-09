@@ -58,7 +58,6 @@ function searchBarInit() {
 	}
 } searchBarInit();
 
-
 /* Get posts
 /*--------------------------------------------------------------------------*/
 function getPosts() {
@@ -178,11 +177,16 @@ function createPostExcerptEl(post, postExcerptBase) {
 		// rating
 		newPostExcerpt.querySelector('.post-excerpt__rating .screen-reader-text').innerText = "Rating: "+ post.rating;
 		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
+
+		// remove likes or bookmarks from the base
+		newPostExcerpt.querySelector('.post-excerpt__bookmark-btn').classList.remove('checked');
+		newPostExcerpt.querySelector('.post-excerpt__like-btn').classList.remove('checked');
 	}
 
 	// return semi-assembled element
 	return newPostExcerpt;
 }
+
 
 /*==========================================================================*/
 /* Home Scripts

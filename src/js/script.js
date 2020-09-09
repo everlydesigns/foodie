@@ -24,7 +24,7 @@ function headerNavInit() {
 	// make scroll lock responsive
 	window.addEventListener('resize', (event) => {
 		const winWidth = window.innerWidth;
-		
+
 		if ( winWidth >= 1200 ) {
 			if ( scrollLockEnabled ) {
 				bodyScrollLock.clearAllBodyScrollLocks();
@@ -339,12 +339,27 @@ function singleScriptsInit() {
 	if ( !document.body.classList.contains('is-single') ) return;
 
 	// intialize single scripts
+	postReviewInit();
 	reviewSliderInit();
 	nutritionInfoInit();
 	postGalleryInit();
 	relatedPostsInit();
 
 } singleScriptsInit();
+
+/* Post Review Specific Scripts
+/*--------------------------------------------------------------------------*/
+function postReviewInit() {
+	// allow ingredient items to be crossed of with a click
+	document.querySelector('.post-recipe__ingredients-list').addEventListener('click', event => {
+		let targetListItem = event.target.closest('li');
+		if ( targetListItem && targetListItem.tagName == 'LI' ) {
+			if ( targetListItem.classList.contains('post-recipe__ingredient-item') ) {
+				targetListItem.classList.toggle('crossed-off');
+			}
+		}
+	});
+}
 
 /* Review Section Slider
 /*--------------------------------------------------------------------------*/

@@ -345,9 +345,19 @@
 		line-height: 1.8rem;
 		margin-bottom: 1.2rem;
 		color: var(--clr-secondary-300);
+		cursor: pointer;
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		&.crossed-off {
+			opacity: 0.5;
+			text-decoration: line-through;
+
+			> * {
+				opacity: 0.8;
+			}
 		}
 	}
 	&__ingredient {

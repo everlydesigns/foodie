@@ -752,7 +752,7 @@
 
 		.user-review {
 			flex-shrink: 0;
-			width: unquote("min(calc(100% - 6rem), 28rem)");
+			width: unquote("min(calc(100vw - 6rem), 28rem)");
 		}
 	}
 

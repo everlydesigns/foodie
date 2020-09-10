@@ -1,18 +1,19 @@
 /*==========================================================================*/
 /* Import Modules
 /*==========================================================================*/
-const { src, dest, task, watch, parallel } = require('gulp')
+const { src, dest, task, watch, parallel, series } = require('gulp')
 const sass = require('gulp-sass')
 const minifyCSS = require('gulp-csso')
 const rename = require('gulp-rename')
 const autoprefixer = require('gulp-autoprefixer')
 const babel = require('gulp-babel')
 const terser = require('gulp-terser')
-const livereload = require('gulp-livereload')
+// const livereload = require('gulp-livereload')
 const image = require('gulp-image')
 const imageResize = require('gulp-image-resize')
 const resize = require('gulp-images-resizer')
 const merge = require('merge-stream')
+const browserSync = require('browser-sync').create();
 
 
 /* SASS + Autoprefixer + Minifier
@@ -25,7 +26,8 @@ function sassPrefixMin() {
 		.pipe(minifyCSS())
 		//.pipe(rename({suffix: '.min' })) // optional*
 		.pipe(dest('./dist/css'))
-		.pipe(livereload({ start: true }))
+		.pipe(browserSync.stream())
+		// .pipe(livereload({ start: true }))
 }
 
 /* JS + Babel + Uglify
@@ -37,13 +39,17 @@ function jsBabelMin() {
 		}))
 		.pipe(terser())
 		.pipe(dest('./dist/js'))
+		// .pipe(browserSync.reload())
 }
 
 /* Optimize graphics
 /*--------------------------------------------------------------------------*/
 function imgOptimize() {
 	return src(['src/img/**/*', '!src/img/posts/*', '!src/img/gallery/*'])
-		.pipe(image())
+		.pipe(image({
+			jpegRecompress: ['--strip', '--quality', 'high', '--min', 80, '--max', 100],
+			quiet: true
+		}))
 		.pipe(dest('./dist/img'))
 }
 
@@ -198,6 +204,16 @@ function generateGalleryThumbs() {
 /* Watch Files
 /*==========================================================================*/
 function watchFiles() {
+	// start server
+	browserSync.init({
+		open: false,
+		ghostMode: false,
+		server: {
+			baseDir: "./",
+			injectChanges: true
+		}
+	});
+
 	// watch all scss files
 	watch('src/scss/**/*.scss', sassPrefixMin)
 
@@ -211,7 +227,9 @@ function watchFiles() {
 /*==========================================================================*/
 /* Tasks
 /*==========================================================================*/
-task('default', parallel(sassPrefixMin, jsBabelMin, watchFiles, imgOptimize))
+task('default', parallel(sassPrefixMin, jsBabelMin, imgOptimize, watchFiles))
+
+// task('browser-sync', series(sassPrefixMin, jsBabelMin, imgOptimize, watchFiles, browserSyncInit))
 
 /* SASS Task
 /*--------------------------------------------------------------------------*/

@@ -456,6 +456,11 @@ function relatedPostsInit() {
 
 		const newPostExcerpt = createPostExcerptEl(posts[postInsertId], basePost);
 
+		// update srcset attribute
+		let imageTag = newPostExcerpt.querySelector('.post-excerpt__thumb-img');
+		let imageTagSrcSet = imageTag.getAttribute('srcset', '');
+		imageTag.setAttribute('srcset', imageTagSrcSet.replace(/dist\/img\/posts\/post\-3/g, posts[postInsertId].thumb));
+
 		// add to array to insert later
 		postsToInsert.push(newPostExcerpt);
 	});

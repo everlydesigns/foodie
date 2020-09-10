@@ -53,15 +53,38 @@
 	}
 
 	@include breakpoint(st) {
-		background: rgba(black, .6);
+		background: rgba(black, 0);
+		transition: background .3s ease;
+		display: block;
+		opacity: 0;
+		pointer-events: none;
 
-		@at-root .header--opened ~ .nav-panel {
-			width: 100%;
+		* {
+			pointer-events: none;
 		}
 
 		&__wrap {
 			right: auto;
 			width: 34rem;
+			transform: translate3d(-34rem, 0, 0);
+			transition: transform .3s ease;
+		}
+
+		// opened state
+		@at-root .header--opened ~ .nav-panel {
+			opacity: 1;
+			background: rgba(black, .6);
+			pointer-events: all;
+
+			* {
+				pointer-events: all;
+			}
+
+			.nav-panel {
+				&__wrap {
+					transform: translate3d(0,0,0);
+				}
+			}
 		}
 	}
 
@@ -69,10 +92,17 @@
 		@include breakpoint(dp) {
 			width: 34rem!important;
 			display: flex;
+			opacity: 1;
+			pointer-events: all;
+
+			* {
+				pointer-events: all;
+			}
 
 			&__wrap {
 				width: 100%;
 				padding-top: 7.8rem;
+				transform: translate3d(0,0,0);
 			}
 		}
 	}
@@ -80,10 +110,17 @@
 		@media (min-width: 83.75em) {
 			width: 34rem!important;
 			display: flex;
+			opacity: 1;
+			pointer-events: all;
+
+			* {
+				pointer-events: all;
+			}
 
 			&__wrap {
 				width: 100%;
 				padding-top: 7.8rem;
+				transform: translate3d(0,0,0);
 			}
 		}
 	}

@@ -31,10 +31,16 @@
 	z-index: 100000; /* Above WP toolbar. */
 }
 
-
+/* Outline
+/*--------------------------------------------------------------------------*/
 :focus {
-	outline-width: .2rem;
-	outline-offset: .2rem;
+	outline-width: .3rem;
+	outline-offset: .1rem;
 	outline-color: var(--outline-color);
 	outline-style: solid;
+}
+
+// if mouse is used to navigate, hide the focus ring
+[data-whatintent='mouse'] *:focus {
+	outline: none;
 }

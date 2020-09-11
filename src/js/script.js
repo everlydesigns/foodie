@@ -62,7 +62,7 @@ function headerNavInit() {
 	// click event for navigation checkboxes
 	document.querySelectorAll('.nav-links__item--checkbox').forEach((checkboxItem) => {
 		checkboxItem.addEventListener('click', function(e) {
-			this.querySelector('.nav-links__item-checkbox').classList.toggle('checked');
+			this.querySelector('.nav-links__item-checkbox').classList.toggle('is-active');
 		})
 	});
 } headerNavInit();
@@ -203,8 +203,8 @@ function createPostExcerptEl(post, postExcerptBase) {
 		newPostExcerpt.querySelector('.post-excerpt__rating-stars').setAttribute('class', 'post-excerpt__rating-stars post-excerpt__rating-stars--'+ Math.round(post.rating));
 
 		// remove likes or bookmarks from the base
-		newPostExcerpt.querySelector('.post-excerpt__bookmark-btn').classList.remove('checked');
-		newPostExcerpt.querySelector('.post-excerpt__like-btn').classList.remove('checked');
+		newPostExcerpt.querySelector('.post-excerpt__bookmark-btn').classList.remove('is-active');
+		newPostExcerpt.querySelector('.post-excerpt__like-btn').classList.remove('is-active');
 	}
 
 	// return semi-assembled element
@@ -316,12 +316,12 @@ function postExptInit() {
 
 		// bookmark button
 		if ( e.target.classList.contains('post-excerpt__bookmark-btn') ) {
-			e.target.classList.toggle('checked');
+			e.target.classList.toggle('is-active');
 		}
 
 		// likes button
 		if ( e.target.classList.contains('post-excerpt__like-btn') ) {
-			e.target.classList.toggle('checked');
+			e.target.classList.toggle('is-active');
 		}
 
 		// comments button
@@ -364,7 +364,7 @@ function postReviewInit() {
 		let targetListItem = event.target.closest('li');
 		if ( targetListItem && targetListItem.tagName == 'LI' ) {
 			if ( targetListItem.classList.contains('post-recipe__ingredient-item') ) {
-				targetListItem.classList.toggle('crossed-off');
+				targetListItem.classList.toggle('is-crossed-off');
 			}
 		}
 	});

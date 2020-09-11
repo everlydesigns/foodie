@@ -220,7 +220,7 @@
 		margin-right: 1.2rem;
 		cursor: pointer;
 
-		&.checked {
+		&.is-checked {
 			background: var(--clr-secondary-400) url('/dist/img/checkbox-tick.svg') no-repeat center center;
 			border-width: 0;
 		}

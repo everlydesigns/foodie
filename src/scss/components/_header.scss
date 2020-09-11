@@ -353,7 +353,7 @@
 				text-transform: uppercase;
 				color: var(--clr-primary-200);
 
-				&--active {
+				&.is-active {
 					background: var(--clr-primary-200);
 					color: var(--clr-secondary-400);
 					padding-left: 2rem;

@@ -222,7 +222,7 @@
 			fill: var(--clr-secondary-400);
 		}
 
-		&.checked {
+		&.is-active {
 			path:nth-child(1) {
 				fill: var(--clr-secondary-400);
 			}
@@ -241,7 +241,7 @@
 			transition: fill .3s ease;
 		}
 
-		&.checked {
+		&.is-active {
 			path {
 				fill: var(--clr-secondary-400);
 			}

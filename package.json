@@ -1,12 +1,12 @@
 {
-  "name": "bp",
-  "version": "1.0.0",
-  "description": "",
+  "name": "foodie",
+  "version": "1.3.1",
+  "description": "Recipe based web app for real foodies.",
   "main": "index.js",
   "scripts": {
     "start": "gulp"
   },
-  "author": "",
+  "author": "everlydesigns.co.uk",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.7",
@@ -18,12 +18,9 @@
     "gulp-csso": "^4.0.1",
     "gulp-image": "^6.2.1",
     "gulp-image-resize": "^0.13.1",
-    "gulp-images-resizer": "0.0.8",
-    "gulp-livereload": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-terser": "^1.2.0",
-    "merge-stream": "^2.0.0"
+    "gulp-terser": "^1.2.0"
   },
   "dependencies": {
     "body-scroll-lock": "^3.1.3"

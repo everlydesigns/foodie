@@ -8,7 +8,6 @@ const rename = require('gulp-rename')
 const autoprefixer = require('gulp-autoprefixer')
 const babel = require('gulp-babel')
 const terser = require('gulp-terser')
-// const livereload = require('gulp-livereload')
 const image = require('gulp-image')
 const imageResize = require('gulp-image-resize')
 const resize = require('gulp-images-resizer')
@@ -22,12 +21,9 @@ function sassPrefixMin() {
 	return src('src/scss/**/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({ cascade: false }))
-		//.pipe(dest(file => file.base)) // optional*
 		.pipe(minifyCSS())
-		//.pipe(rename({suffix: '.min' })) // optional*
 		.pipe(dest('./dist/css'))
 		.pipe(browserSync.stream())
-		// .pipe(livereload({ start: true }))
 }
 
 /* JS + Babel + Uglify
@@ -229,7 +225,6 @@ function watchFiles() {
 /*==========================================================================*/
 task('default', parallel(sassPrefixMin, jsBabelMin, imgOptimize, watchFiles))
 
-// task('browser-sync', series(sassPrefixMin, jsBabelMin, imgOptimize, watchFiles, browserSyncInit))
 
 /* SASS Task
 /*--------------------------------------------------------------------------*/

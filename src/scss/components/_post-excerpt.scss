@@ -273,7 +273,7 @@
 
 				&:hover {
 					.post-excerpt__rating-star {
-						background-image: url(/dist/img/star.svg);
+						background-image: url(../img/star.svg);
 						opacity: 1;
 					}
 				}
@@ -282,7 +282,7 @@
 			&-star {
 				width: 1.5rem + 0.2rem;
 				height: 1.5rem;
-				background: url(/dist/img/star.svg) no-repeat center;
+				background: url(../img/star.svg) no-repeat center;
 				cursor: pointer;
 
 				&:hover {

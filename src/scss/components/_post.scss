@@ -103,17 +103,17 @@
 	&__stat {
 		&--difficulty {
 			.post__stat-icon {
-				background-image: url("/dist/img/icon-chef-hat.svg");
+				background-image: url("../img/icon-chef-hat.svg");
 			}
 		}
 		&--servings {
 			.post__stat-icon {
-				background-image: url("/dist/img/icon-pie.svg");
+				background-image: url("../img/icon-pie.svg");
 			}
 		}
 		&--prep-time {
 			.post__stat-icon {
-				background-image: url("/dist/img/icon-clock.svg");
+				background-image: url("../img/icon-clock.svg");
 			}
 
 			&__label-long {
@@ -198,7 +198,7 @@
 			position: absolute;
 			top: 1.1rem;
 			left: 1.2rem;
-			background: url(/dist/img/icon-light-bulb.svg) no-repeat center;
+			background: url(../img/icon-light-bulb.svg) no-repeat center;
 		}
 
 		p {
@@ -262,7 +262,7 @@
 	}
 	&__comments-icon {
 		border: 0;
-		background: var(--clr-secondary-400) url(/dist/img/icon-comments.svg) no-repeat center;
+		background: var(--clr-secondary-400) url(../img/icon-comments.svg) no-repeat center;
 		width: 3rem;
 		height: 3rem;
 		border-radius: 1.5rem;

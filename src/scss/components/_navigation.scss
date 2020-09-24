@@ -221,7 +221,7 @@
 		cursor: pointer;
 
 		&.is-checked {
-			background: var(--clr-secondary-400) url('/dist/img/checkbox-tick.svg') no-repeat center center;
+			background: var(--clr-secondary-400) url('../img/checkbox-tick.svg') no-repeat center center;
 			border-width: 0;
 		}
 	}
